@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A84422071A5ABF30008C7527 /* PersonalSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84422061A5ABF30008C7527 /* PersonalSettingViewController.m */; };
 		A85053E91A5993E900731462 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A85053E81A5993E900731462 /* main.m */; };
 		A85053EC1A5993E900731462 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A85053EB1A5993E900731462 /* AppDelegate.m */; };
 		A85053EF1A5993E900731462 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85053EE1A5993E900731462 /* ViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A84422051A5ABF30008C7527 /* PersonalSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalSettingViewController.h; sourceTree = "<group>"; };
+		A84422061A5ABF30008C7527 /* PersonalSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalSettingViewController.m; sourceTree = "<group>"; };
 		A85053E31A5993E900731462 /* 风筝.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "风筝.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85053E71A5993E900731462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A85053E81A5993E900731462 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +92,8 @@
 				A85053F31A5993E900731462 /* Images.xcassets */,
 				A85053F51A5993E900731462 /* LaunchScreen.xib */,
 				A85053E61A5993E900731462 /* Supporting Files */,
+				A84422051A5ABF30008C7527 /* PersonalSettingViewController.h */,
+				A84422061A5ABF30008C7527 /* PersonalSettingViewController.m */,
 			);
 			path = "风筝";
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				A85053EF1A5993E900731462 /* ViewController.m in Sources */,
 				A85053EC1A5993E900731462 /* AppDelegate.m in Sources */,
 				A85053E91A5993E900731462 /* main.m in Sources */,
+				A84422071A5ABF30008C7527 /* PersonalSettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +420,7 @@
 				A85054081A5993E900731462 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A85054091A5993E900731462 /* Build configuration list for PBXNativeTarget "风筝Tests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +429,7 @@
 				A850540B1A5993E900731462 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
