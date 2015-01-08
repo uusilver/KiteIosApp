@@ -31,7 +31,7 @@
         NSLog(@"进入个人设置页面");
     }else{
         
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"登陆" message:@"用户名或者密码错误，请重新输入" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"登陆信息" message:@"用户名或者密码错误，请重新输入" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
         [alertView show];
         //清空密码输入栏
         password.text = @"";
