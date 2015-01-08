@@ -15,6 +15,13 @@
 		A85053F41A5993E900731462 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A85053F31A5993E900731462 /* Images.xcassets */; };
 		A85053F71A5993E900731462 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85053F51A5993E900731462 /* LaunchScreen.xib */; };
 		A85054031A5993E900731462 /* __Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A85054021A5993E900731462 /* __Tests.m */; };
+		A85E5D451A5D6B4900411FD6 /* kite.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A85E5D441A5D6B4900411FD6 /* kite.jpg */; };
+		A85E5D481A5D6B7100411FD6 /* KiteServiceSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85E5D471A5D6B7100411FD6 /* KiteServiceSelectorViewController.m */; };
+		A85E5D4A1A5D81A300411FD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85E5D491A5D81A300411FD6 /* CoreGraphics.framework */; };
+		A87A26E51A5E7FEF00512BB0 /* highsky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A87A26E41A5E7FEF00512BB0 /* highsky.jpg */; };
+		A87A26E71A5E7FF800512BB0 /* lowsky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A87A26E61A5E7FF800512BB0 /* lowsky.jpg */; };
+		A8CCE35A1A5E2DD200CAEA06 /* line.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8CCE3591A5E2DD200CAEA06 /* line.jpg */; };
+		A8CCE35D1A5E309F00CAEA06 /* DrawLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CCE35C1A5E309F00CAEA06 /* DrawLineView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +50,15 @@
 		A85053FC1A5993E900731462 /* 风筝Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "风筝Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85054011A5993E900731462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A85054021A5993E900731462 /* __Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __Tests.m; sourceTree = "<group>"; };
+		A85E5D441A5D6B4900411FD6 /* kite.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kite.jpg; sourceTree = "<group>"; };
+		A85E5D461A5D6B7100411FD6 /* KiteServiceSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiteServiceSelectorViewController.h; sourceTree = "<group>"; };
+		A85E5D471A5D6B7100411FD6 /* KiteServiceSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KiteServiceSelectorViewController.m; sourceTree = "<group>"; };
+		A85E5D491A5D81A300411FD6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A87A26E41A5E7FEF00512BB0 /* highsky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = highsky.jpg; sourceTree = "<group>"; };
+		A87A26E61A5E7FF800512BB0 /* lowsky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lowsky.jpg; sourceTree = "<group>"; };
+		A8CCE3591A5E2DD200CAEA06 /* line.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = line.jpg; sourceTree = "<group>"; };
+		A8CCE35B1A5E309F00CAEA06 /* DrawLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineView.h; sourceTree = "<group>"; };
+		A8CCE35C1A5E309F00CAEA06 /* DrawLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A85E5D4A1A5D81A300411FD6 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +83,7 @@
 		A85053DA1A5993E900731462 = {
 			isa = PBXGroup;
 			children = (
+				A85E5D491A5D81A300411FD6 /* CoreGraphics.framework */,
 				A85053E51A5993E900731462 /* 风筝 */,
 				A85053FF1A5993E900731462 /* 风筝Tests */,
 				A85053E41A5993E900731462 /* Products */,
@@ -94,6 +112,10 @@
 				A85053E61A5993E900731462 /* Supporting Files */,
 				A84422051A5ABF30008C7527 /* PersonalSettingViewController.h */,
 				A84422061A5ABF30008C7527 /* PersonalSettingViewController.m */,
+				A85E5D461A5D6B7100411FD6 /* KiteServiceSelectorViewController.h */,
+				A85E5D471A5D6B7100411FD6 /* KiteServiceSelectorViewController.m */,
+				A8CCE35B1A5E309F00CAEA06 /* DrawLineView.h */,
+				A8CCE35C1A5E309F00CAEA06 /* DrawLineView.m */,
 			);
 			path = "风筝";
 			sourceTree = "<group>";
@@ -101,6 +123,10 @@
 		A85053E61A5993E900731462 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A87A26E61A5E7FF800512BB0 /* lowsky.jpg */,
+				A87A26E41A5E7FEF00512BB0 /* highsky.jpg */,
+				A85E5D441A5D6B4900411FD6 /* kite.jpg */,
+				A8CCE3591A5E2DD200CAEA06 /* line.jpg */,
 				A85053E71A5993E900731462 /* Info.plist */,
 				A85053E81A5993E900731462 /* main.m */,
 			);
@@ -204,8 +230,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A85E5D451A5D6B4900411FD6 /* kite.jpg in Resources */,
+				A87A26E51A5E7FEF00512BB0 /* highsky.jpg in Resources */,
+				A8CCE35A1A5E2DD200CAEA06 /* line.jpg in Resources */,
 				A85053F21A5993E900731462 /* Main.storyboard in Resources */,
 				A85053F71A5993E900731462 /* LaunchScreen.xib in Resources */,
+				A87A26E71A5E7FF800512BB0 /* lowsky.jpg in Resources */,
 				A85053F41A5993E900731462 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,7 +254,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A85E5D481A5D6B7100411FD6 /* KiteServiceSelectorViewController.m in Sources */,
 				A85053EF1A5993E900731462 /* ViewController.m in Sources */,
+				A8CCE35D1A5E309F00CAEA06 /* DrawLineView.m in Sources */,
 				A85053EC1A5993E900731462 /* AppDelegate.m in Sources */,
 				A85053E91A5993E900731462 /* main.m in Sources */,
 				A84422071A5ABF30008C7527 /* PersonalSettingViewController.m in Sources */,

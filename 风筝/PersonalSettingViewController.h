@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PersonalSettingViewController : UIViewController
+@interface PersonalSettingViewController : UIViewController<UIActionSheetDelegate>
 
 -(IBAction)savePersonalSetting:(id)sender;
 @end
