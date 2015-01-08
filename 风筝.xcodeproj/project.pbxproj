@@ -20,7 +20,6 @@
 		A85E5D4A1A5D81A300411FD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85E5D491A5D81A300411FD6 /* CoreGraphics.framework */; };
 		A87A26E51A5E7FEF00512BB0 /* highsky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A87A26E41A5E7FEF00512BB0 /* highsky.jpg */; };
 		A87A26E71A5E7FF800512BB0 /* lowsky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A87A26E61A5E7FF800512BB0 /* lowsky.jpg */; };
-		A8CCE35A1A5E2DD200CAEA06 /* line.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8CCE3591A5E2DD200CAEA06 /* line.jpg */; };
 		A8CCE35D1A5E309F00CAEA06 /* DrawLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CCE35C1A5E309F00CAEA06 /* DrawLineView.m */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +55,6 @@
 		A85E5D491A5D81A300411FD6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A87A26E41A5E7FEF00512BB0 /* highsky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = highsky.jpg; sourceTree = "<group>"; };
 		A87A26E61A5E7FF800512BB0 /* lowsky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lowsky.jpg; sourceTree = "<group>"; };
-		A8CCE3591A5E2DD200CAEA06 /* line.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = line.jpg; sourceTree = "<group>"; };
 		A8CCE35B1A5E309F00CAEA06 /* DrawLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineView.h; sourceTree = "<group>"; };
 		A8CCE35C1A5E309F00CAEA06 /* DrawLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,7 +124,6 @@
 				A87A26E61A5E7FF800512BB0 /* lowsky.jpg */,
 				A87A26E41A5E7FEF00512BB0 /* highsky.jpg */,
 				A85E5D441A5D6B4900411FD6 /* kite.jpg */,
-				A8CCE3591A5E2DD200CAEA06 /* line.jpg */,
 				A85053E71A5993E900731462 /* Info.plist */,
 				A85053E81A5993E900731462 /* main.m */,
 			);
@@ -232,7 +229,6 @@
 			files = (
 				A85E5D451A5D6B4900411FD6 /* kite.jpg in Resources */,
 				A87A26E51A5E7FEF00512BB0 /* highsky.jpg in Resources */,
-				A8CCE35A1A5E2DD200CAEA06 /* line.jpg in Resources */,
 				A85053F21A5993E900731462 /* Main.storyboard in Resources */,
 				A85053F71A5993E900731462 /* LaunchScreen.xib in Resources */,
 				A87A26E71A5E7FF800512BB0 /* lowsky.jpg in Resources */,
