@@ -80,7 +80,8 @@
         [self showCloseServiceAlert:@"请输入服务密码"];
         //TODO同时纪录用户已经松开了按钮，如果在规定时间内未能输入正确的服务密码，则后台服务需要通知紧急联系人
         //调用alertUrgentPersonTimer,初始化任务事件，如果未在时间内关闭则运行, 5*60 = 300秒
-        alertUrgentPersonTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(askServerToAlertUrgentPerson) userInfo:nil repeats:NO];
+        int sTime = 300;
+        alertUrgentPersonTimer = [NSTimer scheduledTimerWithTimeInterval:sTime target:self selector:@selector(askServerToAlertUrgentPerson) userInfo:nil repeats:NO];
     }
 }
 
@@ -152,13 +153,15 @@
     
     //TODO 需要测试Temp文件是否会被删除
     recordedTmpFile = [NSURL fileURLWithPath:[self audioRecordingPath]];  //文件名的设置
-    
+    //手机震动提示用户开始录音
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     
     recorder = [[AVAudioRecorder alloc] initWithURL:recordedTmpFile settings:recordSetting error:nil];
     [recorder prepareToRecord];
     [recorder record];
     //录音30秒**********************
-    voiceRecordTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(stopVoiceRecoder) userInfo:nil repeats:NO];
+    int vTimer = 30;
+    voiceRecordTimer = [NSTimer scheduledTimerWithTimeInterval:vTimer target:self selector:@selector(stopVoiceRecoder) userInfo:nil repeats:NO];
     
     
 }
