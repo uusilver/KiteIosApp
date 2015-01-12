@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Ks7-Ep-Qwo">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -13,15 +13,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="highsky.jpg" id="vAR-c8-TUL">
-                                <rect key="frame" x="0.0" y="20" width="320" height="96"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lowsky.jpg" id="cPv-ja-AMS">
-                                <rect key="frame" x="0.0" y="116" width="320" height="98"/>
+                                <rect key="frame" x="0.0" y="189" width="320" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kite.jpg" id="AGa-ZJ-xau">
-                                <rect key="frame" x="146" y="323" width="119" height="47"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kite.jpg" id="ze4-Jv-fRA">
+                                <rect key="frame" x="145" y="423" width="95" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -30,14 +30,14 @@
                     <tabBarItem key="tabBarItem" title="服务选择" id="5sM-nC-Uml"/>
                     <navigationItem key="navigationItem" id="ge0-hi-Asv"/>
                     <connections>
-                        <outlet property="imageView" destination="AGa-ZJ-xau" id="op6-6X-eIP"/>
+                        <outlet property="imageView" destination="ze4-Jv-fRA" id="wUq-eG-DgQ"/>
                         <segue destination="rYc-pJ-t3Z" kind="modal" identifier="longKiteSerice" id="0Zn-LI-f1k"/>
                         <segue destination="Ks7-Ep-Qwo" kind="modal" identifier="shortKiteService" id="SEm-D0-PO6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdN-Ac-4dq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2008" y="-883"/>
+            <point key="canvasLocation" x="-2063" y="-892"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Q9t-c8-M4t">
@@ -60,26 +60,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9DV-6H-K7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2195" y="-60"/>
+            <point key="canvasLocation" x="-2279" y="-62"/>
         </scene>
-        <!--View Controller-->
+        <!--Short Kite Service View Controller-->
         <scene sceneID="Y4V-8Z-0QQ">
             <objects>
-                <viewController id="Ks7-Ep-Qwo" sceneMemberID="viewController">
+                <viewController id="Ks7-Ep-Qwo" customClass="ShortKiteServiceViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hUw-Vc-eyK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="短线风筝" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9iM-55-wq5">
-                                <rect key="frame" x="139" y="55" width="68" height="21"/>
+                                <rect key="frame" x="126" y="15" width="68" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AmG-Lv-7K3">
+                                <rect key="frame" x="115" y="240" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="按下服务开启">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="serviceBtn" destination="AmG-Lv-7K3" id="9Xf-bh-gID"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jdw-7w-HY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,7 +121,7 @@
                                 <rect key="frame" x="146" y="111" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="JMy-Kc-k73">
                                 <rect key="frame" x="146" y="193" width="97" height="30"/>
@@ -123,7 +133,7 @@
                                 <rect key="frame" x="146" y="335" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="5tI-eI-OUj">
                                 <rect key="frame" x="146" y="269" width="97" height="30"/>
@@ -186,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biW-4f-nKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2364" y="-2396"/>
+            <point key="canvasLocation" x="-2480" y="-892"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -278,42 +288,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WTn-Y3-EPL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1617" y="-883"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Axl-Em-0I7">
-            <objects>
-                <viewController id="ptM-yY-i3Z" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lYF-Hm-Goh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="风筝注册" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3E3-h6-Vyn">
-                                <rect key="frame" x="0.0" y="20" width="344" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="容易记确难猜" minimumFontSize="17" id="u5H-gD-29y">
-                                <rect key="frame" x="149" y="163" width="146" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机号" minimumFontSize="17" id="fJD-jl-5B3">
-                                <rect key="frame" x="149" y="91" width="146" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bga-uT-7NG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2436" y="-883"/>
+            <point key="canvasLocation" x="-1636" y="-892"/>
         </scene>
         <!--登出系统-->
         <scene sceneID="SJl-rO-ZhA">

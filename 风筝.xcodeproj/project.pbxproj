@@ -19,6 +19,8 @@
 		A85E5D451A5D6B4900411FD6 /* kite.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A85E5D441A5D6B4900411FD6 /* kite.jpg */; };
 		A85E5D481A5D6B7100411FD6 /* KiteServiceSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85E5D471A5D6B7100411FD6 /* KiteServiceSelectorViewController.m */; };
 		A85E5D4A1A5D81A300411FD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85E5D491A5D81A300411FD6 /* CoreGraphics.framework */; };
+		A878E6C21A611F02001F981B /* ShortKiteServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A878E6C11A611F02001F981B /* ShortKiteServiceViewController.m */; };
+		A878E6C41A6229BC001F981B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A878E6C31A6229BC001F981B /* CoreLocation.framework */; };
 		A87A26E51A5E7FEF00512BB0 /* highsky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A87A26E41A5E7FEF00512BB0 /* highsky.jpg */; };
 		A87A26E71A5E7FF800512BB0 /* lowsky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A87A26E61A5E7FF800512BB0 /* lowsky.jpg */; };
 		A8CCE35D1A5E309F00CAEA06 /* DrawLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CCE35C1A5E309F00CAEA06 /* DrawLineView.m */; };
@@ -56,6 +58,9 @@
 		A85E5D461A5D6B7100411FD6 /* KiteServiceSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiteServiceSelectorViewController.h; sourceTree = "<group>"; };
 		A85E5D471A5D6B7100411FD6 /* KiteServiceSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KiteServiceSelectorViewController.m; sourceTree = "<group>"; };
 		A85E5D491A5D81A300411FD6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A878E6C01A611F02001F981B /* ShortKiteServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortKiteServiceViewController.h; sourceTree = "<group>"; };
+		A878E6C11A611F02001F981B /* ShortKiteServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortKiteServiceViewController.m; sourceTree = "<group>"; };
+		A878E6C31A6229BC001F981B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A87A26E41A5E7FEF00512BB0 /* highsky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = highsky.jpg; sourceTree = "<group>"; };
 		A87A26E61A5E7FF800512BB0 /* lowsky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lowsky.jpg; sourceTree = "<group>"; };
 		A8CCE35B1A5E309F00CAEA06 /* DrawLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineView.h; sourceTree = "<group>"; };
@@ -67,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A878E6C41A6229BC001F981B /* CoreLocation.framework in Frameworks */,
 				A85E5D4A1A5D81A300411FD6 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +99,7 @@
 		A85053DA1A5993E900731462 = {
 			isa = PBXGroup;
 			children = (
+				A878E6C31A6229BC001F981B /* CoreLocation.framework */,
 				A85E5D491A5D81A300411FD6 /* CoreGraphics.framework */,
 				A85053E51A5993E900731462 /* 风筝 */,
 				A85053FF1A5993E900731462 /* 风筝Tests */,
@@ -112,6 +119,7 @@
 		A85053E51A5993E900731462 /* 风筝 */ = {
 			isa = PBXGroup;
 			children = (
+				A878E6BF1A611EDA001F981B /* KiteServiceCollection */,
 				A812E9941A5EB228009D2410 /* RegisterController */,
 				A85053EA1A5993E900731462 /* AppDelegate.h */,
 				A85053EB1A5993E900731462 /* AppDelegate.m */,
@@ -158,6 +166,15 @@
 				A85054011A5993E900731462 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A878E6BF1A611EDA001F981B /* KiteServiceCollection */ = {
+			isa = PBXGroup;
+			children = (
+				A878E6C01A611F02001F981B /* ShortKiteServiceViewController.h */,
+				A878E6C11A611F02001F981B /* ShortKiteServiceViewController.m */,
+			);
+			name = KiteServiceCollection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A878E6C21A611F02001F981B /* ShortKiteServiceViewController.m in Sources */,
 				A85E5D481A5D6B7100411FD6 /* KiteServiceSelectorViewController.m in Sources */,
 				A812E9971A5EB25C009D2410 /* RegistViewController.m in Sources */,
 				A85053EF1A5993E900731462 /* ViewController.m in Sources */,
@@ -349,7 +367,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -384,7 +402,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
