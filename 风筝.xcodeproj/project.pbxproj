@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A812E9971A5EB25C009D2410 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A812E9961A5EB25C009D2410 /* RegistViewController.m */; };
+		A842E4821A64C88200617A9E /* LongKiteServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A842E4811A64C88200617A9E /* LongKiteServiceViewController.m */; };
 		A84422071A5ABF30008C7527 /* PersonalSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84422061A5ABF30008C7527 /* PersonalSettingViewController.m */; };
 		A85053E91A5993E900731462 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A85053E81A5993E900731462 /* main.m */; };
 		A85053EC1A5993E900731462 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A85053EB1A5993E900731462 /* AppDelegate.m */; };
@@ -39,6 +40,8 @@
 /* Begin PBXFileReference section */
 		A812E9951A5EB25C009D2410 /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
 		A812E9961A5EB25C009D2410 /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
+		A842E4801A64C88200617A9E /* LongKiteServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongKiteServiceViewController.h; sourceTree = "<group>"; };
+		A842E4811A64C88200617A9E /* LongKiteServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongKiteServiceViewController.m; sourceTree = "<group>"; };
 		A84422051A5ABF30008C7527 /* PersonalSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalSettingViewController.h; sourceTree = "<group>"; };
 		A84422061A5ABF30008C7527 /* PersonalSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalSettingViewController.m; sourceTree = "<group>"; };
 		A85053E31A5993E900731462 /* 风筝.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "风筝.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +176,8 @@
 			children = (
 				A878E6C01A611F02001F981B /* ShortKiteServiceViewController.h */,
 				A878E6C11A611F02001F981B /* ShortKiteServiceViewController.m */,
+				A842E4801A64C88200617A9E /* LongKiteServiceViewController.h */,
+				A842E4811A64C88200617A9E /* LongKiteServiceViewController.m */,
 			);
 			name = KiteServiceCollection;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				A85E5D481A5D6B7100411FD6 /* KiteServiceSelectorViewController.m in Sources */,
 				A812E9971A5EB25C009D2410 /* RegistViewController.m in Sources */,
 				A85053EF1A5993E900731462 /* ViewController.m in Sources */,
+				A842E4821A64C88200617A9E /* LongKiteServiceViewController.m in Sources */,
 				A8CCE35D1A5E309F00CAEA06 /* DrawLineView.m in Sources */,
 				A85053EC1A5993E900731462 /* AppDelegate.m in Sources */,
 				A85053E91A5993E900731462 /* main.m in Sources */,
