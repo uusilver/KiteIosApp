@@ -14,6 +14,10 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UINavigationController *navController;
 
+//全局变量的设置
+@property NSString* username;
+@property BOOL isLogin;
+
 
 @end
 

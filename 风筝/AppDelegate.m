@@ -13,7 +13,8 @@
 @end
 
 @implementation AppDelegate
-
+@synthesize username;
+@synthesize isLogin;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
