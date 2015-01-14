@@ -20,13 +20,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    //添加背景图片
+    UIImage *backImage = [UIImage imageNamed:@"blue_sky.jpeg"];
+    UIImageView *drawBackImageOnBg = [[UIImageView alloc]initWithImage:backImage];
+    drawBackImageOnBg.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    [self.view insertSubview:drawBackImageOnBg atIndex:0];
+    
+    //TODO 开发结束后清理这段代码
+    //如果是tableview
+//    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back-568h"]];
+//    imgView.frame = self.view.bounds;
+//    imgView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+//    [self.tableView setBackgroundView:imgView];
+    
+    wrapper = [[KeychainItemWrapper alloc] initWithIdentifier:@"Account Number"
+                                                  accessGroup:@"YOUR_APP_ID_HERE.com.yourcompany.AppIdentifier"];
+    
+    
+    //TODO放开测试..
+    //清空Wrapper设置
+//    [wrapper resetKeychainItem];
+    
     // Do any additional setup after loading the view, typically from a nib.
     password.secureTextEntry = YES;
     //初始化默认记住用户
     rememberFlag.on = YES;
     NSString* username = @"";
     NSString* password = @"";
+    //TODO放开测试..
+//    username = [wrapper objectForKey:(__bridge id)kSecAttrAccount];
+//    password = [wrapper objectForKey:(__bridge id)kSecValueData];
     if((username==nil||[username isEqualToString:@""])&&(password==nil||[password isEqualToString:@""])){
         NSLog(@"用户名密码为空，正常登录");
     }else{
@@ -47,6 +70,9 @@
         if(rememberFlag.on){
             //keychain保存密码
             NSLog(@"记住我打开，保存密码");
+            //TODO 等待测试
+//            [wrapper setObject:usernameCode forKey:(__bridge id)(kSecAttrAccount)];
+//            [wrapper setObject:passwordCode forKey:(__bridge id)(kSecValueData)];
             
         }
         //在storyboard拖拽中，定义segue的id，这里的identifier和定义的id相同完成跳转!

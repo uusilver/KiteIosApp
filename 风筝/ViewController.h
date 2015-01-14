@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <Security/Security.h>
+#import "KeychainItemWrapper.h"
 #import "PersonalSettingViewController.h"
 #import "AppDelegate.h"
 
 @interface ViewController : UIViewController{
+    KeychainItemWrapper *wrapper;
 }
 @property (strong, nonatomic) IBOutlet UITextField *username;
 @property (strong, nonatomic) IBOutlet UITextField *password;
