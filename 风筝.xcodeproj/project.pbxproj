@@ -11,7 +11,6 @@
 		A842E4821A64C88200617A9E /* LongKiteServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A842E4811A64C88200617A9E /* LongKiteServiceViewController.m */; };
 		A84422071A5ABF30008C7527 /* PersonalSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84422061A5ABF30008C7527 /* PersonalSettingViewController.m */; };
 		A84F7BFC1A66A1390006E652 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = A84F7BFB1A66A1390006E652 /* KeychainItemWrapper.m */; };
-		A84F7BFE1A66A4860006E652 /* blue_sky.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A84F7BFD1A66A4860006E652 /* blue_sky.jpeg */; };
 		A85053E91A5993E900731462 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A85053E81A5993E900731462 /* main.m */; };
 		A85053EC1A5993E900731462 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A85053EB1A5993E900731462 /* AppDelegate.m */; };
 		A85053EF1A5993E900731462 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85053EE1A5993E900731462 /* ViewController.m */; };
@@ -22,6 +21,7 @@
 		A85E5D451A5D6B4900411FD6 /* kite.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A85E5D441A5D6B4900411FD6 /* kite.jpg */; };
 		A85E5D481A5D6B7100411FD6 /* KiteServiceSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85E5D471A5D6B7100411FD6 /* KiteServiceSelectorViewController.m */; };
 		A85E5D4A1A5D81A300411FD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85E5D491A5D81A300411FD6 /* CoreGraphics.framework */; };
+		A8679C721A67F93B0063020E /* blue_sky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8679C711A67F93B0063020E /* blue_sky.jpg */; };
 		A878E6C21A611F02001F981B /* ShortKiteServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A878E6C11A611F02001F981B /* ShortKiteServiceViewController.m */; };
 		A878E6C41A6229BC001F981B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A878E6C31A6229BC001F981B /* CoreLocation.framework */; };
 		A87A26E51A5E7FEF00512BB0 /* highsky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A87A26E41A5E7FEF00512BB0 /* highsky.jpg */; };
@@ -48,7 +48,6 @@
 		A84422061A5ABF30008C7527 /* PersonalSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalSettingViewController.m; sourceTree = "<group>"; };
 		A84F7BFA1A66A1390006E652 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		A84F7BFB1A66A1390006E652 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
-		A84F7BFD1A66A4860006E652 /* blue_sky.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blue_sky.jpeg; sourceTree = "<group>"; };
 		A85053E31A5993E900731462 /* 风筝.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "风筝.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85053E71A5993E900731462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A85053E81A5993E900731462 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		A85E5D461A5D6B7100411FD6 /* KiteServiceSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiteServiceSelectorViewController.h; sourceTree = "<group>"; };
 		A85E5D471A5D6B7100411FD6 /* KiteServiceSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KiteServiceSelectorViewController.m; sourceTree = "<group>"; };
 		A85E5D491A5D81A300411FD6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A8679C711A67F93B0063020E /* blue_sky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blue_sky.jpg; sourceTree = "<group>"; };
 		A878E6C01A611F02001F981B /* ShortKiteServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortKiteServiceViewController.h; sourceTree = "<group>"; };
 		A878E6C11A611F02001F981B /* ShortKiteServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortKiteServiceViewController.m; sourceTree = "<group>"; };
 		A878E6C31A6229BC001F981B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -136,6 +136,7 @@
 		A85053E51A5993E900731462 /* 风筝 */ = {
 			isa = PBXGroup;
 			children = (
+				A8679C6D1A67D7550063020E /* lib */,
 				A84F7BF91A66A1280006E652 /* KeyChainItemWrapper */,
 				A878E6BF1A611EDA001F981B /* KiteServiceCollection */,
 				A812E9941A5EB228009D2410 /* RegisterController */,
@@ -160,7 +161,7 @@
 		A85053E61A5993E900731462 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A84F7BFD1A66A4860006E652 /* blue_sky.jpeg */,
+				A8679C711A67F93B0063020E /* blue_sky.jpg */,
 				A87A26E61A5E7FF800512BB0 /* lowsky.jpg */,
 				A87A26E41A5E7FEF00512BB0 /* highsky.jpg */,
 				A85E5D441A5D6B4900411FD6 /* kite.jpg */,
@@ -185,6 +186,13 @@
 				A85054011A5993E900731462 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A8679C6D1A67D7550063020E /* lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = lib;
 			sourceTree = "<group>";
 		};
 		A878E6BF1A611EDA001F981B /* KiteServiceCollection */ = {
@@ -281,9 +289,9 @@
 				A85E5D451A5D6B4900411FD6 /* kite.jpg in Resources */,
 				A87A26E51A5E7FEF00512BB0 /* highsky.jpg in Resources */,
 				A85053F21A5993E900731462 /* Main.storyboard in Resources */,
-				A84F7BFE1A66A4860006E652 /* blue_sky.jpeg in Resources */,
 				A85053F71A5993E900731462 /* LaunchScreen.xib in Resources */,
 				A87A26E71A5E7FF800512BB0 /* lowsky.jpg in Resources */,
+				A8679C721A67F93B0063020E /* blue_sky.jpg in Resources */,
 				A85053F41A5993E900731462 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

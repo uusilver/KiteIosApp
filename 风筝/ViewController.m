@@ -20,8 +20,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //添加loading的toolbar
+    loadingItem = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    loadingItem.center = CGPointMake(20, 35);
+    [self.view addSubview:loadingItem];
+//    [loadingItem startAnimating];
+    
     //添加背景图片
-    UIImage *backImage = [UIImage imageNamed:@"blue_sky.jpeg"];
+    UIImage *backImage = [UIImage imageNamed:@"blue_sky.jpg"];
     UIImageView *drawBackImageOnBg = [[UIImageView alloc]initWithImage:backImage];
     drawBackImageOnBg.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [self.view insertSubview:drawBackImageOnBg atIndex:0];
@@ -40,8 +46,7 @@
     //TODO放开测试..
     //清空Wrapper设置
 //    [wrapper resetKeychainItem];
-    
-    // Do any additional setup after loading the view, typically from a nib.
+
     password.secureTextEntry = YES;
     //初始化默认记住用户
     rememberFlag.on = YES;
@@ -81,9 +86,8 @@
         NSLog(@"进入服务列表页面");
         
     }else{
+        [self showAlertMsgBox:@"密码错误请重新输入"];
         
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"登陆信息" message:@"用户名或者密码错误，请重新输入" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
-        [alertView show];
         //清空密码输入栏
         password.text = @"";
 //        [self performSegueWithIdentifier:@"Login" sender:self];
@@ -92,6 +96,11 @@
     
 }
 
+//统一显示错误信息
+-(void)showAlertMsgBox:(NSString*) msg{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"登陆信息" message:msg delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+    [alertView show];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

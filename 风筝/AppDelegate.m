@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    // 延时欢迎页面图片到3秒
+// 延时欢迎页面图片到3秒
     
 //    [NSThread sleepForTimeInterval:3.0];
     return YES;

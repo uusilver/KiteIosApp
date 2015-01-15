@@ -11,13 +11,18 @@
 #import "KeychainItemWrapper.h"
 #import "PersonalSettingViewController.h"
 #import "AppDelegate.h"
+#import "HYCircleLoadingView.h"
 
 @interface ViewController : UIViewController{
     KeychainItemWrapper *wrapper;
+    //loading控件
+    UIActivityIndicatorView *loadingItem;
 }
 @property (strong, nonatomic) IBOutlet UITextField *username;
 @property (strong, nonatomic) IBOutlet UITextField *password;
 @property (strong, nonatomic) IBOutlet UISwitch *rememberFlag;
+//引入loading文件
+@property (nonatomic, strong) HYCircleLoadingView *loadingView;
 
 
 
