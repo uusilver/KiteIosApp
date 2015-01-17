@@ -129,6 +129,7 @@
 }
 
 
+
 //统一显示错误信息的提示框
 -(void)showAlertMsgBox:(NSString*) msg{
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"登陆信息" message:msg delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];

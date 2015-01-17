@@ -28,6 +28,8 @@
 		A87A26E71A5E7FF800512BB0 /* lowsky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A87A26E61A5E7FF800512BB0 /* lowsky.jpg */; };
 		A893AB3F1A69F8AB00458924 /* HYCircleLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A893AB3E1A69F8AB00458924 /* HYCircleLoadingView.m */; };
 		A893AB411A69FFC900458924 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A893AB401A69FFC900458924 /* bg.jpg */; };
+		A893AB431A6A395C00458924 /* pink-blue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A893AB421A6A395C00458924 /* pink-blue.jpg */; };
+		A893AB451A6A39F800458924 /* pink.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A893AB441A6A39F800458924 /* pink.jpg */; };
 		A8CCE35D1A5E309F00CAEA06 /* DrawLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CCE35C1A5E309F00CAEA06 /* DrawLineView.m */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,8 @@
 		A893AB3D1A69F8A500458924 /* HYCircleLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYCircleLoadingView.h; sourceTree = "<group>"; };
 		A893AB3E1A69F8AB00458924 /* HYCircleLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYCircleLoadingView.m; sourceTree = "<group>"; };
 		A893AB401A69FFC900458924 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		A893AB421A6A395C00458924 /* pink-blue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pink-blue.jpg"; sourceTree = "<group>"; };
+		A893AB441A6A39F800458924 /* pink.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pink.jpg; sourceTree = "<group>"; };
 		A8CCE35B1A5E309F00CAEA06 /* DrawLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineView.h; sourceTree = "<group>"; };
 		A8CCE35C1A5E309F00CAEA06 /* DrawLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +170,8 @@
 		A85053E61A5993E900731462 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A893AB441A6A39F800458924 /* pink.jpg */,
+				A893AB421A6A395C00458924 /* pink-blue.jpg */,
 				A893AB401A69FFC900458924 /* bg.jpg */,
 				A8679C711A67F93B0063020E /* blue_sky.jpg */,
 				A87A26E61A5E7FF800512BB0 /* lowsky.jpg */,
@@ -295,7 +301,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A85E5D451A5D6B4900411FD6 /* kite.jpg in Resources */,
+				A893AB451A6A39F800458924 /* pink.jpg in Resources */,
 				A87A26E51A5E7FEF00512BB0 /* highsky.jpg in Resources */,
+				A893AB431A6A395C00458924 /* pink-blue.jpg in Resources */,
 				A85053F21A5993E900731462 /* Main.storyboard in Resources */,
 				A85053F71A5993E900731462 /* LaunchScreen.xib in Resources */,
 				A87A26E71A5E7FF800512BB0 /* lowsky.jpg in Resources */,
