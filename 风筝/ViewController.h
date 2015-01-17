@@ -15,8 +15,7 @@
 
 @interface ViewController : UIViewController{
     KeychainItemWrapper *wrapper;
-    //loading控件
-    UIActivityIndicatorView *loadingItem;
+    
 }
 @property (strong, nonatomic) IBOutlet UITextField *username;
 @property (strong, nonatomic) IBOutlet UITextField *password;

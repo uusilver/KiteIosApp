@@ -10,4 +10,8 @@
 
 @implementation RegistViewController
 
+-(IBAction)registAction:(id)sender{
+    NSLog(@"用户注册");
+    
+}
 @end
