@@ -12,6 +12,9 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
+    //初始化密码输入
+    self.password.secureTextEntry = YES;
+    self.password1.secureTextEntry = YES;
     //添加navigation bar
     //创建一个导航栏
     UINavigationBar *navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 58)];
@@ -45,6 +48,32 @@
 }
 -(IBAction)registAction:(id)sender{
     NSLog(@"用户注册");
+    NSString *username = self.username.text;
+    NSString *password = self.password.text;
+    NSString *password1 = self.password1.text;
+    NSString *randomCode = self.randomCode.text;
     
+    if(username==nil||[username isEqualToString:@""]){
+        [self showAlertMsgBox:@"用户名不能为空"];
+    }else if(password==nil||[password isEqualToString:@""]){
+        [self showAlertMsgBox:@"密码不能为空"];
+    }else if(password1==nil||[password1 isEqualToString:@""]){
+        [self showAlertMsgBox:@"重复的密码不能为空"];
+    }else if(![password isEqualToString:password1]){
+        [self showAlertMsgBox:@"两次输入的密码不一致，请检查"];
+    }else if(randomCode==nil||[randomCode isEqualToString:@""]){
+        [self showAlertMsgBox:@"随即码不能为空"];
+    }else{
+        //TODO 调用注册的restservice，成功跳转到个人设置页面
+        [self performSegueWithIdentifier:@"settingPage" sender:self];
+    }
+    
+    
+}
+
+//统一显示错误信息的提示框
+-(void)showAlertMsgBox:(NSString*) msg{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"登陆信息" message:msg delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+    [alertView show];
 }
 @end

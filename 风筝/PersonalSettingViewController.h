@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PersonalSettingViewController : UIViewController<UIActionSheetDelegate>
+@interface PersonalSettingViewController : UIViewController<UIActionSheetDelegate, UIPickerViewDelegate, UITextFieldDelegate,UIPickerViewDataSource>{
+    
+    NSArray *touchFreqArray;
+}
 
+@property (strong, nonatomic) IBOutlet UIPickerView *touchFreqSelector;
 -(IBAction)savePersonalSetting:(id)sender;
 @end
