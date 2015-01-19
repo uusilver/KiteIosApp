@@ -10,12 +10,17 @@
 
 @implementation PersonalSettingViewController
 @synthesize touchFreqSelector;
-
+@synthesize l_timeButton;
 -(void)viewDidLoad{
     [super viewDidLoad];
+    //验证码按钮初始化
+    [l_timeButton addTarget:self action:@selector(startTime)
+           forControlEvents:UIControlEventTouchUpInside];
+    //初始化选择框
     touchFreqArray = [NSArray arrayWithObjects:@"15",@"30",@"45", nil];
     touchFreqSelector.delegate = self;
     touchFreqSelector.dataSource = self;
+    [touchFreqSelector selectedRowInComponent:0];
     
     //添加navigation bar
     //创建一个导航栏
@@ -55,6 +60,59 @@
     
     NSInteger row = [touchFreqSelector selectedRowInComponent:0];
     NSString *selectedTouchFreq = [touchFreqArray objectAtIndex:row];
+    NSString *urgent_name = self.urgent_name.text;
+    NSString *urgent_telno = self.urgent_telno.text;
+    NSString *randomCode = self.randomCode.text;
+    if(urgent_name==nil||[urgent_name isEqualToString:@""]){
+        [self showAlertMsgBox:@"紧急联系姓名不能为空"];
+    }else if(urgent_telno==nil||[urgent_telno isEqualToString:@""]){
+        [self showAlertMsgBox:@"紧急联系电话不能为空"];
+    }else if(randomCode==nil||[randomCode isEqualToString:@""]){
+        [self showAlertMsgBox:@"验证码不能为空"];
+    }else{
+        //跳转到服务列表页面
+        [self performSegueWithIdentifier:@"kiteAllService" sender:self];
+    }
+    
     NSLog(@"选中的频率为:%@",selectedTouchFreq);
+}
+
+//验证码按钮倒计时
+-(void)startTime{
+    __block int timeout=59; //倒计时时间
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
+    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
+    dispatch_source_set_event_handler(_timer, ^{
+        if(timeout<=0){ //倒计时结束，关闭
+            dispatch_source_cancel(_timer);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //设置界面的按钮显示 根据自己需求设置
+                [l_timeButton setTitle:@"发送验证码" forState:UIControlStateNormal];
+                l_timeButton.userInteractionEnabled = YES;
+            });
+        }else{
+            //            int minutes = timeout / 60;
+            int seconds = timeout % 60;
+            NSString *strTime = [NSString stringWithFormat:@"%.2d", seconds];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //设置界面的按钮显示 根据自己需求设置
+                NSLog(@"____%@",strTime);
+                [l_timeButton setTitle:[NSString stringWithFormat:@"%@秒后重新发送",strTime] forState:UIControlStateNormal];
+                l_timeButton.userInteractionEnabled = NO;
+                
+            });
+            timeout--;
+            
+        }
+    });
+    dispatch_resume(_timer);
+    
+}
+
+//统一显示错误信息的提示框
+-(void)showAlertMsgBox:(NSString*) msg{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"登陆信息" message:msg delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+    [alertView show];
 }
 @end
