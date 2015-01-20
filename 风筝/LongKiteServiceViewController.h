@@ -9,12 +9,16 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface LongKiteServiceViewController : UIViewController
+@interface LongKiteServiceViewController : UIViewController<UIPickerViewDelegate, UITextFieldDelegate,UIPickerViewDataSource>
 {
     UIButton *serviceButton;
     BOOL serviceFlag;
     NSTimer *serviceTimer;
+    
+    NSArray *touchFreqArray;
+
 }
+@property (strong, nonatomic) IBOutlet UIPickerView *touchFreqSelector;
 @property (nonatomic, strong) CLLocationManager  *locationManager;
 @property (nonatomic, strong) CLLocationManager  *headManager;
 

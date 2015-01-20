@@ -79,6 +79,26 @@
     NSLog(@"选中的频率为:%@",selectedTouchFreq);
 }
 
+-(IBAction)resetAllField:(id)sender{
+    NSLog(@"清空所有的个人设置信息");
+    UIAlertView* alert=[[UIAlertView alloc]initWithTitle:@"清空所有输入框"message:@"清空所有输入框??" delegate:self cancelButtonTitle:@"确认"otherButtonTitles:@"取消",nil];
+    [alert show];
+
+}
+
+//确认关闭选择
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == 0){
+        //用户选择Yes
+        self.urgent_name.text=@"";
+        self.urgent_telno.text=@"";
+        self.randomCode.text=@"";
+    }
+    //index == 1, 代表用户选择no，没有任何操作
+}
+
+
 //验证码按钮倒计时
 -(void)startTime{
     __block int timeout=59; //倒计时时间

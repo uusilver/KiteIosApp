@@ -76,6 +76,24 @@
     
     
 }
+-(IBAction)resetFields:(id)sender{
+    NSLog(@"清空注册信息");
+    UIAlertView* alert=[[UIAlertView alloc]initWithTitle:@"清空所有输入框"message:@"清空所有输入框??" delegate:self cancelButtonTitle:@"确认"otherButtonTitles:@"取消",nil];
+    [alert show];
+}
+
+//确认关闭选择
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == 0){
+        //用户选择Yes
+        self.username.text=@"";
+        self.password.text=@"";
+        self.password1.text=@"";
+        self.randomCode.text=@"";
+    }
+    //index == 1, 代表用户选择no，没有任何操作
+}
 
 //验证码按钮倒计时
 -(void)startTime{

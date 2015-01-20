@@ -9,9 +9,15 @@
 #import "LongKiteServiceViewController.h"
 
 @implementation LongKiteServiceViewController
-
+@synthesize touchFreqSelector;
 -(void)viewDidLoad{
     [super viewDidLoad];
+    //初始化选择框
+    touchFreqArray = [NSArray arrayWithObjects:@"15",@"30",@"45", nil];
+    touchFreqSelector.delegate = self;
+    touchFreqSelector.dataSource = self;
+    [touchFreqSelector selectedRowInComponent:0];
+    
     //开启GPS服务
     if([CLLocationManager locationServicesEnabled]){
         NSLog(@"初始化GPS服务");
@@ -66,8 +72,12 @@
 //开启长线风筝服务，按用户设定的频率读取gps信息
 -(void)startLongKiteService{
     NSLog(@"开启服务....");
+    //获得用户的设置时间
+    NSInteger row = [touchFreqSelector selectedRowInComponent:0];
+    NSString *selectedTouchFreq = [touchFreqArray objectAtIndex:row];
+    NSLog(@"用户设定的访问时间为:%@",selectedTouchFreq);
     //按分钟调用
-    int lTime = 5;
+    int lTime = 5; //秒
     serviceTimer = [NSTimer scheduledTimerWithTimeInterval:lTime target:self selector:@selector(callRealKiteService) userInfo:nil repeats:YES];
     
 }
@@ -77,6 +87,7 @@
     [_locationManager startUpdatingLocation];
     //调用方向
     [_headManager startUpdatingHeading];
+    
 }
 
 //关闭长线风筝服务
@@ -120,6 +131,18 @@
         NSLog(@"%@",heading);
         
     }
+}
+
+//提供多少个选择框
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+
+-(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return [touchFreqArray count];
+}
+-(NSString*) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    return [touchFreqArray objectAtIndex:row];
 }
 
 
