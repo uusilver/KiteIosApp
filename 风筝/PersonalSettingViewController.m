@@ -79,9 +79,9 @@
     NSLog(@"选中的频率为:%@",selectedTouchFreq);
 }
 
--(IBAction)resetAllField:(id)sender{
-    NSLog(@"清空所有的个人设置信息");
-    UIAlertView* alert=[[UIAlertView alloc]initWithTitle:@"清空所有输入框"message:@"清空所有输入框??" delegate:self cancelButtonTitle:@"确认"otherButtonTitles:@"取消",nil];
+-(IBAction)logoutKite:(id)sender{
+    NSLog(@"退出风筝");
+    UIAlertView* alert=[[UIAlertView alloc]initWithTitle:@"退出风筝"message:@"确认退出风筝" delegate:self cancelButtonTitle:@"确认"otherButtonTitles:@"取消",nil];
     [alert show];
 
 }
@@ -90,13 +90,13 @@
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if(buttonIndex == 0){
+        NSLog(@"执行具体的登出代码");
         //用户选择Yes
-        self.urgent_name.text=@"";
-        self.urgent_telno.text=@"";
-        self.randomCode.text=@"";
+        
     }
     //index == 1, 代表用户选择no，没有任何操作
 }
+
 
 
 //验证码按钮倒计时

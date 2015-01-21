@@ -78,7 +78,7 @@
 }
 -(IBAction)resetFields:(id)sender{
     NSLog(@"清空注册信息");
-    UIAlertView* alert=[[UIAlertView alloc]initWithTitle:@"清空所有输入框"message:@"清空所有输入框??" delegate:self cancelButtonTitle:@"确认"otherButtonTitles:@"取消",nil];
+    UIAlertView* alert=[[UIAlertView alloc]initWithTitle:@"清空所有输入框"message:@"清空所有输入框?" delegate:self cancelButtonTitle:@"确认"otherButtonTitles:@"取消",nil];
     [alert show];
 }
 
