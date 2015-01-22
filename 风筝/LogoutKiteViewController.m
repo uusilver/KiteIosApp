@@ -26,6 +26,8 @@
     if(buttonIndex == 0){
         //用户选择Yes
         NSLog(@"执行登出代码");
+        //清空用户的Wrapper设置
+        [wrapper resetKeychainItem];
     }
     //index == 1, 代表用户选择no，没有任何操作
 }

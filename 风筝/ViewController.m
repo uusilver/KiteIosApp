@@ -53,19 +53,8 @@
     drawBackImageOnBg.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [self.view insertSubview:drawBackImageOnBg atIndex:0];
     
-    //TODO 开发结束后清理这段代码
-    //如果是tableview
-//    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back-568h"]];
-//    imgView.frame = self.view.bounds;
-//    imgView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-//    [self.tableView setBackgroundView:imgView];
-    
     wrapper = [[KeychainItemWrapper alloc] initWithIdentifier:@"Account Number" accessGroup:@"YOUR_APP_ID_HERE.com.yourcompany.AppIdentifier"];
     
-    
-    //TODO放开测试..
-    //清空Wrapper设置
-//    [wrapper resetKeychainItem];
     
     password.secureTextEntry = YES;
     //初始化默认记住用户

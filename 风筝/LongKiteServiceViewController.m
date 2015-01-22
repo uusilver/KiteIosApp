@@ -24,7 +24,7 @@
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(gotBackToServicePool)];
     
     //设置导航栏的内容
-    [navItem setTitle:@"注册"];
+    [navItem setTitle:@"长线风筝服务"];
     
     //把导航栏集合添加到导航栏中，设置动画关闭
     [navBar pushNavigationItem:navItem animated:NO];
@@ -70,9 +70,12 @@
     CGRect frame = CGRectMake(90, 200, 200, 60);
     serviceButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     serviceButton.backgroundColor = [UIColor clearColor];
+    //TODO 根据ws来获得当前用户服务状态，从而初始化用户的按钮图标
     if(YES){
         [serviceButton setTitle:@"开启服务" forState:UIControlStateNormal];
         serviceFlag = YES;
+        //设置相关全局变量
+        
     }else{
         
     }
@@ -179,6 +182,12 @@
 
 -(void)viewDidDisappear:(BOOL)animated{
     //页面消失，清空相关服务
+    [_locationManager stopUpdatingLocation];
+    [_headManager stopUpdatingHeading];
+    //关闭timer
+    [serviceTimer setFireDate:[NSDate distantFuture]];
+    
+    
 }
 
 @end

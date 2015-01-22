@@ -28,7 +28,7 @@
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(gotBackToServicePool)];
     
     //设置导航栏的内容
-    [navItem setTitle:@"注册"];
+    [navItem setTitle:@"短线风筝服务"];
     
     //把导航栏集合添加到导航栏中，设置动画关闭
     [navBar pushNavigationItem:navItem animated:NO];

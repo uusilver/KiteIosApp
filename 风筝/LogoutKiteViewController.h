@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KeychainItemWrapper.h"
 
-@interface LogoutKiteViewController : UIViewController
+@interface LogoutKiteViewController : UIViewController{
+    KeychainItemWrapper *wrapper;
+}
 
 @end
