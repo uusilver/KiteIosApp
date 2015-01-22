@@ -12,8 +12,9 @@
 #import "PersonalSettingViewController.h"
 #import "AppDelegate.h"
 #import "HYCircleLoadingView.h"
+#import "MYIntroductionView.h"
 
-@interface ViewController : UIViewController{
+@interface ViewController : UIViewController <MYIntroductionDelegate>{
     KeychainItemWrapper *wrapper;
     
 }

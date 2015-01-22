@@ -8,22 +8,40 @@
 
 #import "KiteServiceSelectorViewController.h"
 
+@interface KiteServiceSelectorViewController ()
+@property (weak, nonatomic) IBOutlet UIView *mainView;
+@property (weak, nonatomic) IBOutlet UIView *coverView;
+@property (weak, nonatomic) IBOutlet UIButton *checkboxBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *girlImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+@end
+
 @implementation KiteServiceSelectorViewController
 @synthesize serviceType;
+//是否显示遮盖层介绍信息
+@synthesize coverview_show_flag;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     //TODO 判断用户的服务状态，如果开启长线风筝服务则跳转到相关页面
+    //添加遮盖层点击事件
+    UITapGestureRecognizer *coverViewTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toMainViewAction:)];
+    [self.coverView addGestureRecognizer:coverViewTapped];
     
+    //初始化不再显示checkbox
+    coverview_show_flag = YES;
+    [self.checkboxBtn setBackgroundImage:[UIImage imageNamed:@"cb_glossy_off"] forState:YES];
     
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    startImgPoint=imageView.frame.origin;
+    startImgPoint=self.imageView.frame.origin;
     startTouchPoint=[[[[event allTouches] allObjects] objectAtIndex:0] locationInView:self.view];
     if (startTouchPoint.x>startImgPoint.x&&
-        startTouchPoint.x<startImgPoint.x+imageView.frame.size.width&&
+        startTouchPoint.x<startImgPoint.x+self.imageView.frame.size.width&&
         startTouchPoint.y>startImgPoint.y&&
-        startTouchPoint.y<startImgPoint.y+imageView.frame.size.height) {
+        startTouchPoint.y<startImgPoint.y+self.imageView.frame.size.height) {
         draging=YES;
     }
     
@@ -35,7 +53,7 @@
      }
     
     CGPoint currentTouchPoint=[[[[event allTouches] allObjects] objectAtIndex:0] locationInView:self.view];
-    CGRect currentFrame=imageView.frame;
+    CGRect currentFrame=self.imageView.frame;
     
     currentFrame.origin.x=startImgPoint.x+currentTouchPoint.x-startTouchPoint.x;
     currentFrame.origin.y=startImgPoint.y+currentTouchPoint.y-startTouchPoint.y;
@@ -52,7 +70,7 @@
     if (currentFrame.origin.y>640-currentFrame.size.height) {
         currentFrame.origin.y=640-currentFrame.size.height;
     }
-    imageView.frame=currentFrame;
+    self.imageView.frame=currentFrame;
 
 }
 
@@ -64,7 +82,7 @@
     float lowSkyHeight = scrrenHeight*0.6;
     NSLog(@"高点%lf,低点%lf",highSkyHeight,lowSkyHeight);
     //获得图片最后的落点
-    CGRect lastFrame = imageView.frame;
+    CGRect lastFrame = self.imageView.frame;
     //float lx = lastFrame.origin.x;
     float ly = lastFrame.origin.y;
     if(ly<highSkyHeight){
@@ -100,5 +118,20 @@
     //index == 1, 代表用户选择no，没有任何操作
 }
 
+//遮盖层点击事件
+- (IBAction)toMainViewAction:(id)sender {
+    self.mainView.hidden = NO;
+    self.coverView.hidden = YES;
+}
 
+//checkbox点击事件
+- (IBAction)checkboxAction:(id)sender {
+    if(self.coverview_show_flag){
+        [self.checkboxBtn setImage:[UIImage imageNamed:@"cb_glossy_off"]  forState:NO];
+        self.coverview_show_flag = NO;
+    }else{
+        [self.checkboxBtn setImage:[UIImage imageNamed:@"cb_glossy_on"]  forState:NO];
+        self.coverview_show_flag = YES;
+    }
+}
 @end

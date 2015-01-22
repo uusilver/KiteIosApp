@@ -12,13 +12,15 @@
 {
     CGPoint startImgPoint;
     CGPoint startTouchPoint;
-    IBOutlet UIImageView *imageView;
+    //IBOutlet UIImageView *imageView;
     bool draging;
+    BOOL coverview_show_flag;
 //    CGPoint lineStartPoint;
 //    CGPoint lineEndPoint;
     
 }
 
 @property(nonatomic, assign) NSInteger serviceType;
+@property (nonatomic) BOOL coverview_show_flag;
 
 @end

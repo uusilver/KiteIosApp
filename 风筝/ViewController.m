@@ -141,4 +141,31 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
+//显示介绍页面
+-(void)viewDidAppear:(BOOL)animated{
+    //STEP 1: Construct Panels
+    //1-1 长线风筝
+    MYIntroductionPanel *panel1 = [[MYIntroductionPanel alloc] initWithimage:[UIImage imageNamed:@"girl"] title:@"好担心。。。" description:@"好漫长的旅途，遇到坏人可怎么办呀？？？"];
+    //1-2 短线风筝
+    MYIntroductionPanel *panel2 = [[MYIntroductionPanel alloc] initWithimage:[UIImage imageNamed:@"girl"] title:@"好害怕。。。" description:@"天好黑，前面有个黑巷子。。。过？？？还是，不过？？？"];
+    //1-3 风筝侠横空出世
+    MYIntroductionPanel *panel3 = [[MYIntroductionPanel alloc] initWithimage:[UIImage imageNamed:@"Fzxia"] title:@"噔噔噔~~~" description:@"菇凉别怕，风筝侠来也～"];
+    
+    //STEP 2: Create IntroductionView
+    MYIntroductionView *introductionView = [[MYIntroductionView alloc]
+                                            initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
+                                            headerText:@"风筝安全卫士"
+                                            panels:@[panel1, panel2, panel3]
+                                            languageDirection:MYLanguageDirectionLeftToRight];
+    [introductionView setBackgroundImage:[UIImage imageNamed:@"introBackground"]];
+    
+    //Set delegate to self for callbacks (optional)
+    introductionView.delegate = self;
+    
+    //STEP 3: Show introduction view
+    [introductionView showInView:self.view];
+}
+
 @end
