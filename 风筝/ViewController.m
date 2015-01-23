@@ -34,7 +34,7 @@
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"注册" style:UIBarButtonItemStyleDone target:self action:@selector(gotoRegisterPage)];
     
     //设置导航栏的内容
-    [navItem setTitle:@"登录"];
+    [navItem setTitle:@"风筝登录"];
     
     //把导航栏集合添加到导航栏中，设置动画关闭
     [navBar pushNavigationItem:navItem animated:NO];
@@ -77,37 +77,44 @@
     //验证文本框内容不为空
     if(usernameCode==nil||[usernameCode isEqualToString:@""]){
         [self showAlertMsgBox:@"用户名不能为空"];
+    }else if(![self validateMobile:usernameCode]){
+        [self showAlertMsgBox:@"请输入正确的手机号码"];
     }else if(passwordCode==nil||[passwordCode isEqualToString:@""]){
         [self showAlertMsgBox:@"密码不能为空"];
     }else{
         //登录逻辑校验
-        if(passwordCode!=nil && [passwordCode compare:@"1234"]==NSOrderedSame
-           && usernameCode!=nil && [usernameCode compare:@"13851483034"]==NSOrderedSame){
+        if([self callLoginRestService:usernameCode password:passwordCode]){
             NSLog(@"密码校验通过");
             //设置相关全局变量
             AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
             delegate.isLogin = YES;
+            
             if(rememberFlag.on){
-                //keychain保存密码
-                NSLog(@"记住我打开，保存密码");
                 //TODO 等待测试
                 //            [wrapper setObject:usernameCode forKey:(__bridge id)(kSecAttrAccount)];
                 //            [wrapper setObject:passwordCode forKey:(__bridge id)(kSecValueData)];
                 
             }
-            //在storyboard拖拽中，定义segue的id，这里的identifier和定义的id相同完成跳转!
             //跳转进入服务列表页面
             [self performSegueWithIdentifier:@"KiteServiceList" sender:self];
-            NSLog(@"进入服务列表页面");
             
         }else{
+            //TODO web service的错误信息中包含，用户名不存在，密码错误，以及密码错误的次数提示
             [self showAlertMsgBox:@"用户名或密码错误，请检查后重新输入"];
             password.text = @"";
-            NSLog(@"密码错误，返回登陆页面");
         }//登录逻辑结束
 
     }
     
+}
+//TODO 调用登陆的web service
+-(BOOL)callLoginRestService:(NSString*) usernameCode password:(NSString*) passwordCode{
+    if(passwordCode!=nil && [passwordCode compare:@"1234"]==NSOrderedSame
+       && usernameCode!=nil && [usernameCode compare:@"13851483034"]==NSOrderedSame){
+        return YES;
+    }else{
+        return NO;
+    }
 }
 
 //跳转至注册页面
@@ -116,8 +123,6 @@
     [self performSegueWithIdentifier:@"registerPage" sender:self];
     
 }
-
-
 
 //统一显示错误信息的提示框
 -(void)showAlertMsgBox:(NSString*) msg{
@@ -155,6 +160,56 @@
     
     //STEP 3: Show introduction view
     [introductionView showInView:self.view];
+}
+
+//验证手机号
+- (BOOL)validateMobile:(NSString *)mobileNum
+{
+    /**
+     * 手机号码
+     * 移动：134[0-8],135,136,137,138,139,150,151,157,158,159,182,187,188
+     * 联通：130,131,132,152,155,156,185,186
+     * 电信：133,1349,153,180,189
+     */
+    NSString * MOBILE = @"^1(3[0-9]|5[0-35-9]|8[025-9])\\d{8}$";
+    /**
+     10         * 中国移动：China Mobile
+     11         * 134[0-8],135,136,137,138,139,150,151,157,158,159,182,187,188
+     12         */
+    NSString * CM = @"^1(34[0-8]|(3[5-9]|5[017-9]|8[278])\\d)\\d{7}$";
+    /**
+     15         * 中国联通：China Unicom
+     16         * 130,131,132,152,155,156,185,186
+     17         */
+    NSString * CU = @"^1(3[0-2]|5[256]|8[56])\\d{8}$";
+    /**
+     20         * 中国电信：China Telecom
+     21         * 133,1349,153,180,189
+     22         */
+    NSString * CT = @"^1((33|53|8[09])[0-9]|349)\\d{7}$";
+    /**
+     25         * 大陆地区固话及小灵通
+     26         * 区号：010,020,021,022,023,024,025,027,028,029
+     27         * 号码：七位或八位
+     28         */
+    // NSString * PHS = @"^0(10|2[0-5789]|\\d{3})\\d{7,8}$";
+    
+    NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", MOBILE];
+    NSPredicate *regextestcm = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CM];
+    NSPredicate *regextestcu = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CU];
+    NSPredicate *regextestct = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CT];
+    
+    if (([regextestmobile evaluateWithObject:mobileNum] == YES)
+        || ([regextestcm evaluateWithObject:mobileNum] == YES)
+        || ([regextestct evaluateWithObject:mobileNum] == YES)
+        || ([regextestcu evaluateWithObject:mobileNum] == YES))
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
 }
 
 @end

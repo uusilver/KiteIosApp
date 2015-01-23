@@ -16,7 +16,7 @@
     [l_timeButton addTarget:self action:@selector(startTime)
            forControlEvents:UIControlEventTouchUpInside];
     
-    //初始化密码输入
+    //初始化密码输入框的输入状态
     self.password.secureTextEntry = YES;
     self.password1.secureTextEntry = YES;
     //添加navigation bar
@@ -25,13 +25,11 @@
     //创建一个导航栏集合
     UINavigationItem *navItem = [[UINavigationItem alloc] initWithTitle:nil];
     
-
-    
     //创建一个左边回退按钮
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(gotBackToLogin)];
     
     //设置导航栏的内容
-    [navItem setTitle:@"注册"];
+    [navItem setTitle:@"风筝注册"];
     
     //把导航栏集合添加到导航栏中，设置动画关闭
     [navBar pushNavigationItem:navItem animated:NO];
@@ -47,9 +45,9 @@
 
 }
 -(void)gotBackToLogin{
-    NSLog(@"返回用户登录界面");
     [self performSegueWithIdentifier:@"loginPage" sender:self];
 }
+
 -(IBAction)registAction:(id)sender{
     NSLog(@"用户注册");
     NSString *username = self.username.text;

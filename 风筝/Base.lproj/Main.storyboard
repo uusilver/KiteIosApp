@@ -279,12 +279,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入您要注册的手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hn5-zW-Rge">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入您的手机号来注册" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hn5-zW-Rge">
                                 <rect key="frame" x="57" y="118" width="241" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入您的密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JMy-Kc-k73">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入好记难猜的密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JMy-Kc-k73">
                                 <rect key="frame" x="57" y="191" width="241" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -294,7 +294,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="重复您输的密码，保持一致哦" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5tI-eI-OUj">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="为了安全，请您再输一次密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5tI-eI-OUj">
                                 <rect key="frame" x="57" y="269" width="241" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -316,7 +316,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mX-rt-haW">
-                                <rect key="frame" x="175" y="383" width="138" height="30"/>
+                                <rect key="frame" x="175" y="391" width="138" height="30"/>
                                 <state key="normal" title="获取验证码">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -364,7 +364,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="13851483034" borderStyle="roundedRect" placeholder="输入您注册的手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VL4-YM-ctd">
                                 <rect key="frame" x="53" y="223" width="251" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guX-mJ-rYS">
                                 <rect key="frame" x="53" y="373" width="251" height="30"/>
@@ -583,10 +583,10 @@
         <image name="pink.jpg" width="500" height="375"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="auW-9Y-ksb"/>
         <segue reference="VLR-qv-MCB"/>
-        <segue reference="Bok-NW-T4c"/>
+        <segue reference="d3K-pa-KeZ"/>
         <segue reference="vvz-U4-wJn"/>
-        <segue reference="xmP-CI-1a5"/>
-        <segue reference="K7s-P1-0WL"/>
+        <segue reference="zdK-tt-3lj"/>
     </inferredMetricsTieBreakers>
 </document>

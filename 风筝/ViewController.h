@@ -4,6 +4,7 @@
 //
 //  Created by 李俊英 on 15/1/4.
 //  Copyright (c) 2015年 VaniLi. All rights reserved.
+//  用户登录页面
 //
 
 #import <UIKit/UIKit.h>
@@ -25,7 +26,7 @@
 @property (nonatomic, strong) HYCircleLoadingView *loadingView;
 
 
-
+//登录检查
 -(IBAction)loginCheck:(id)sender;
 @end
 
