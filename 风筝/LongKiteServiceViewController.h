@@ -16,6 +16,13 @@
     NSTimer *serviceTimer;
     
     NSArray *touchFreqArray;
+    
+    float lati;
+    float longti;
+    float heading;
+    
+    int passwordWrongTime;
+
 
 }
 @property (strong, nonatomic) IBOutlet UIPickerView *touchFreqSelector;

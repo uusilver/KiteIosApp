@@ -22,8 +22,6 @@
     //创建一个导航栏集合
     UINavigationItem *navItem = [[UINavigationItem alloc] initWithTitle:nil];
     
-    
-    
     //创建一个左边回退按钮
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(gotBackToServicePool)];
     
@@ -50,7 +48,6 @@
         _locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
         _locationManager.distanceFilter = 10;
         [_locationManager requestWhenInUseAuthorization];
-        //[_locationManager startUpdatingLocation];
     }
     //开启方向服务
     if([CLLocationManager headingAvailable]){
@@ -61,7 +58,6 @@
         _headManager.distanceFilter = 10;
         [_headManager requestWhenInUseAuthorization];
         
-        
     }
     //初始化录音服务
     NSLog(@"初始化录音服务");
@@ -71,20 +67,17 @@
     [session setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
     
     if(session == nil)
-        NSLog(@"Error creating session: %@", [sessionError description]);
+        NSLog(@"录音服务启动出错: %@", [sessionError description]);
     else
         [session setActive:YES error:nil];
 }
 
-
 -(void)gotBackToServicePool{
-    NSLog(@"返回风筝选择界面");
     [self performSegueWithIdentifier:@"shortBack2ServicePool" sender:self];
 }
 
 -(void)loadView{
     [super loadView];
-    
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressBtn:)];
     [longPress setDelegate:self];
     longPress.minimumPressDuration = 0.5;
@@ -121,12 +114,12 @@
 //短线风筝任务的具体逻辑代码
 -(void)shortKiteTimerTask4GPSandDirection{
     NSLog(@"定位服务，前进服务");
-    //调用gps
+    //调用gps服务
     [_locationManager startUpdatingLocation];
-    //调用方向
+    //调用方向服务
     [_headManager startUpdatingHeading];
-    
-    
+    //保存信息的web service
+    [self callSaveShortKiteServiceInfoWebService];
 }
 
 
@@ -136,10 +129,18 @@
 
     //NSLog(@"GPS服务进行中...");
     CLLocation *currLocation = [locations lastObject];
-    NSLog(@"经度=%f 纬度=%f 高度=%f", currLocation.coordinate.latitude, currLocation.coordinate.longitude, currLocation.altitude);
-    //全局变量中的保存地理信息
+    lati = currLocation.coordinate.latitude;
+    longti = currLocation.coordinate.longitude;
+//    NSLog(@"经度=%f 纬度=%f 高度=%f", currLocation.coordinate.latitude, currLocation.coordinate.longitude, currLocation.altitude);
+}
+
+//TODO
+//调用保存用户短线风筝gps信息的web service
+-(void)callSaveShortKiteServiceInfoWebService{
+    NSLog(@"调用短线风筝服务保存用户当前的纬度:%lf;经度:%lf; 前进方向是:%lf",lati, longti,heading);
     
 }
+
 //GPS 出错处理代码
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
@@ -157,8 +158,7 @@
     if(newHeading.headingAccuracy>0){
         NSLog(@"方向获取中....");
         CLLocationDirection theHeding = newHeading.trueHeading;
-        NSString *heading = [NSString stringWithFormat:@"%lf度",theHeding];
-        NSLog(@"%@",heading);
+        heading = theHeding;
         
     }
 }
@@ -243,10 +243,17 @@
         if([serviceCode compare:@"1234"]==NSOrderedSame){
             NSLog(@"密码正确");
             [self stopAllShortKiteService];
+            //重置密码错误输入次数
+            passwordWrongTime = 0;
         }else{
             NSLog(@"密码错误");
             //TODO,密码错误后 启动监测机制5分钟未输入正确密码则通知紧急联系人
-            
+            passwordWrongTime += 1;
+            if(passwordWrongTime>3){
+                //TODO 调用通知紧急联系人的web service， 密码输入次数过多
+                NSLog(@"通知紧急联系人，密码输入次数过多");
+                passwordWrongTime = 0;
+            }
             [self showCloseServiceAlert:@"密码错误,请重新输入密码"];
             
         }

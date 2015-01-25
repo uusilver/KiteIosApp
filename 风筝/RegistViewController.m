@@ -54,6 +54,7 @@
     NSString *password = self.password.text;
     NSString *password1 = self.password1.text;
     NSString *randomCode = self.randomCode.text;
+    NSString *serviceCode = self.serviceCode.text;
     
     if(username==nil||[username isEqualToString:@""]){
         [self showAlertMsgBox:@"用户名不能为空"];
@@ -65,6 +66,10 @@
         [self showAlertMsgBox:@"重复的密码不能为空"];
     }else if(![password isEqualToString:password1]){
         [self showAlertMsgBox:@"两次输入的密码不一致，请检查"];
+    }else if(serviceCode==nil||[serviceCode isEqualToString:@""]){
+        [self showAlertMsgBox:@"服务密码不能为空"];
+    }else if(![self validateServiceCode:serviceCode]){
+        [self showAlertMsgBox:@"服务密码格式不对，请输入4位纯数字"];
     }else if(randomCode==nil||[randomCode isEqualToString:@""]){
         [self showAlertMsgBox:@"随即码不能为空"];
     }else{
@@ -76,19 +81,20 @@
 }
 -(IBAction)resetFields:(id)sender{
     NSLog(@"清空注册信息");
-    UIAlertView* alert=[[UIAlertView alloc]initWithTitle:@"清空所有输入框"message:@"清空所有输入框?" delegate:self cancelButtonTitle:@"确认"otherButtonTitles:@"取消",nil];
+    UIAlertView* alert=[[UIAlertView alloc]initWithTitle:@"清空所有输入框"message:@"清空所有输入框?" delegate:self cancelButtonTitle:@"取消"otherButtonTitles:@"确认",nil];
     [alert show];
 }
 
 //确认关闭选择
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if(buttonIndex == 0){
+    if(buttonIndex == 1){
         //用户选择Yes
         self.username.text=@"";
         self.password.text=@"";
         self.password1.text=@"";
         self.randomCode.text=@"";
+        self.serviceCode.text=@"";
     }
     //index == 1, 代表用户选择no，没有任何操作
 }
@@ -178,6 +184,16 @@
     }
     else
     {
+        return NO;
+    }
+}
+
+-(BOOL)validateServiceCode:(NSString*) serviceCode{
+    NSString *reg = @"/^\d{4}$/";
+    NSPredicate *regextServiceCode = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", reg];
+    if([regextServiceCode evaluateWithObject:serviceCode]==YES){
+        return YES;
+    }else{
         return NO;
     }
 }

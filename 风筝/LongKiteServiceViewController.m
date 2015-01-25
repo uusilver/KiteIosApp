@@ -94,14 +94,55 @@
         [self startLongKiteService];
         [serviceButton setTitle:@"关闭服务" forState:UIControlStateNormal];
         serviceFlag = NO;
+        
     }else{
-        [self stopLongKiteService];
         [serviceButton setTitle:@"开启服务" forState:UIControlStateNormal];
-        serviceFlag = YES;
+        //需要用户输入密码来关闭服务
+        [self showCloseServiceAlert:@"请输入服务密码"];
+        
     }
     
-    
 }
+//定制弹出框,用户输入服务密码来关闭服务
+-(void)showCloseServiceAlert:(NSString*) title{
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title message:@"" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
+    alert.alertViewStyle = UIAlertViewStyleSecureTextInput;
+    [[alert textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeNumberPad];
+    [[alert textFieldAtIndex:0] becomeFirstResponder];
+    [alert show];
+}
+
+//确认关闭选择弹出框
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == 0){
+        //用户选择确认
+        NSLog(@"关闭服务...");
+        NSString *serviceCode = [alertView textFieldAtIndex:0].text;
+        if([serviceCode compare:@"1234"]==NSOrderedSame){
+            NSLog(@"密码正确");
+            [self stopLongKiteService];
+            serviceFlag = YES;
+            //重置密码错误输入次数
+            passwordWrongTime = 0;
+        }else{
+            NSLog(@"密码错误");
+            //TODO,密码错误后 启动监测机制5分钟未输入正确密码则通知紧急联系人
+            passwordWrongTime += 1;
+            if(passwordWrongTime>3){
+                //TODO 调用通知紧急联系人的web service， 密码输入次数过多
+                NSLog(@"通知紧急联系人，密码输入次数过多");
+                passwordWrongTime = 0;
+            }
+            [self showCloseServiceAlert:@"密码错误,请重新输入密码"];
+            
+        }
+        //TODO关闭服务的真正逻辑
+        
+    }
+    //index == 1, 代表用户选择no，没有任何操作
+}
+
 
 //开启长线风筝服务，按用户设定的频率读取gps信息
 -(void)startLongKiteService{
@@ -140,7 +181,10 @@
     
     //NSLog(@"GPS服务进行中...");
     CLLocation *currLocation = [locations lastObject];
-    NSLog(@"经度=%f 纬度=%f 高度=%f", currLocation.coordinate.latitude, currLocation.coordinate.longitude, currLocation.altitude);
+    lati = currLocation.coordinate.latitude;
+    longti = currLocation.coordinate.longitude;
+
+//    NSLog(@"经度=%f 纬度=%f 高度=%f", currLocation.coordinate.latitude, currLocation.coordinate.longitude, currLocation.altitude);
     //全局变量中的保存地理信息
     
 }
@@ -161,10 +205,16 @@
     if(newHeading.headingAccuracy>0){
         NSLog(@"方向获取中....");
         CLLocationDirection theHeding = newHeading.trueHeading;
-        NSString *heading = [NSString stringWithFormat:@"%lf度",theHeding];
-        NSLog(@"%@",heading);
+        heading = theHeding;
+//        NSString *heading = [NSString stringWithFormat:@"%lf度",theHeding];
+//        NSLog(@"%@",heading);
         
     }
+}
+//调用长线风筝的服务来保存用户数据
+-(void)callSaveLongKiteServiceInfoWebService{
+    NSLog(@"调用长线风筝服务保存用户当前的纬度:%lf;经度:%lf; 前进方向是:%lf",lati, longti,heading);
+
 }
 
 //提供多少个选择框

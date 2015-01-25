@@ -10,11 +10,17 @@
 
 @implementation KiteCourseCenterViewController
 @synthesize DataTable;
-- (void)viewDidLoad
-
-{
-    
+- (void)viewDidLoad{
     [super viewDidLoad];
+    //创建一个导航栏
+    UINavigationBar *navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 58)];
+    //创建一个导航栏集合
+    UINavigationItem *navItem = [[UINavigationItem alloc] initWithTitle:nil];
+    //设置导航栏的内容
+    [navItem setTitle:@"风筝讲堂"];
+    //把导航栏集合添加到导航栏中，设置动画关闭
+    [navBar pushNavigationItem:navItem animated:NO];
+    [self.view addSubview:navBar];
     //添加背景图片
     UIImage *backImage = [UIImage imageNamed:@"bg.jpg"];
     UIImageView *drawBackImageOnBg = [[UIImageView alloc]initWithImage:backImage];
@@ -26,8 +32,16 @@
     [DataTable setDataSource:self];
     
     [self.view addSubview:DataTable];
-
-    dataArray1 = [[NSMutableArray alloc] initWithObjects:@"中国", @"美国", @"英国", nil];
+    
+    //TODO 调用新闻列表web service来读取相关
+    dataArray1 = [[NSMutableArray alloc] init];
+    [dataArray1 addObject:@"百度"];
+    [dataArray1 addObject:@"西祠"];
+    [dataArray1 addObject:@"腾讯"];
+    websiteArray = [[NSMutableArray alloc] init];
+    [websiteArray addObject:@"http://www.baidu.com"];
+    [websiteArray addObject:@"http://www.xici.com"];
+    [websiteArray addObject:@"http://www.qq.com"];
 
 }
 
@@ -64,17 +78,9 @@
 //点击cell事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //TODO 根据选择的内容框来跳转到相应的页面
-    NSString *titileString = [dataArray1 objectAtIndex:[indexPath row]];  //这个表示选中的那个cell上的数据
-    [self performSegueWithIdentifier:@"loadWebSegue" sender:self];
+    
+    NSString *selectedVisitWebSite = [websiteArray objectAtIndex:[indexPath row]];
+    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:selectedVisitWebSite]];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if([segue.identifier isEqualToString:@"loadWebSegue"]) //"goView2"是SEGUE连线的标识
-    {
-        id theSegue = segue.destinationViewController;
-        [theSegue setValue:@"http://www.sina.com.cn/" forKey:@"urlVal"];
-    }
-}
 @end

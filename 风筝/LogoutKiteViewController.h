@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "KeychainItemWrapper.h"
+#import "ViewController.h"
 
 @interface LogoutKiteViewController : UIViewController{
     KeychainItemWrapper *wrapper;

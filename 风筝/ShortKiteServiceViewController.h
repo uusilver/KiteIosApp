@@ -17,6 +17,12 @@
 {
     AVAudioRecorder *recorder;
     NSURL *recordedTmpFile;
+    
+    float lati;
+    float longti;
+    float heading;
+    
+    int passwordWrongTime;
 }
 
 @property (strong, nonatomic) IBOutlet UIButton *serviceBtn;

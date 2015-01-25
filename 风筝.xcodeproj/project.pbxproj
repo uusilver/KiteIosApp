@@ -56,7 +56,6 @@
 		A87A26E71A5E7FF800512BB0 /* lowsky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A87A26E61A5E7FF800512BB0 /* lowsky.jpg */; };
 		A8811A3B1A6FC5B200C6F48B /* LogoutKiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8811A3A1A6FC5B200C6F48B /* LogoutKiteViewController.m */; };
 		A8811A3E1A6FD0C800C6F48B /* KiteCourseCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8811A3D1A6FD0C800C6F48B /* KiteCourseCenterViewController.m */; };
-		A8811A411A6FD7CE00C6F48B /* OpenBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8811A401A6FD7CE00C6F48B /* OpenBrowserViewController.m */; };
 		A893AB3F1A69F8AB00458924 /* HYCircleLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A893AB3E1A69F8AB00458924 /* HYCircleLoadingView.m */; };
 		A893AB411A69FFC900458924 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A893AB401A69FFC900458924 /* bg.jpg */; };
 		A893AB431A6A395C00458924 /* pink-blue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A893AB421A6A395C00458924 /* pink-blue.jpg */; };
@@ -141,8 +140,6 @@
 		A8811A3A1A6FC5B200C6F48B /* LogoutKiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoutKiteViewController.m; sourceTree = "<group>"; };
 		A8811A3C1A6FD0C800C6F48B /* KiteCourseCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiteCourseCenterViewController.h; sourceTree = "<group>"; };
 		A8811A3D1A6FD0C800C6F48B /* KiteCourseCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KiteCourseCenterViewController.m; sourceTree = "<group>"; };
-		A8811A3F1A6FD7CE00C6F48B /* OpenBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenBrowserViewController.h; sourceTree = "<group>"; };
-		A8811A401A6FD7CE00C6F48B /* OpenBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenBrowserViewController.m; sourceTree = "<group>"; };
 		A893AB3D1A69F8A500458924 /* HYCircleLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYCircleLoadingView.h; sourceTree = "<group>"; };
 		A893AB3E1A69F8AB00458924 /* HYCircleLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYCircleLoadingView.m; sourceTree = "<group>"; };
 		A893AB401A69FFC900458924 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
@@ -237,8 +234,6 @@
 				A8811A3A1A6FC5B200C6F48B /* LogoutKiteViewController.m */,
 				A8811A3C1A6FD0C800C6F48B /* KiteCourseCenterViewController.h */,
 				A8811A3D1A6FD0C800C6F48B /* KiteCourseCenterViewController.m */,
-				A8811A3F1A6FD7CE00C6F48B /* OpenBrowserViewController.h */,
-				A8811A401A6FD7CE00C6F48B /* OpenBrowserViewController.m */,
 			);
 			path = "风筝";
 			sourceTree = "<group>";
@@ -469,7 +464,6 @@
 				A842E4821A64C88200617A9E /* LongKiteServiceViewController.m in Sources */,
 				A8CCE35D1A5E309F00CAEA06 /* DrawLineView.m in Sources */,
 				A824F7A61A70BCBA005598D9 /* MYIntroductionPanel.m in Sources */,
-				A8811A411A6FD7CE00C6F48B /* OpenBrowserViewController.m in Sources */,
 				A85053EC1A5993E900731462 /* AppDelegate.m in Sources */,
 				A85053E91A5993E900731462 /* main.m in Sources */,
 				A84F7BFC1A66A1390006E652 /* KeychainItemWrapper.m in Sources */,

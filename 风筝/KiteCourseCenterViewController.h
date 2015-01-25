@@ -10,7 +10,8 @@
 
 @interface KiteCourseCenterViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
      
-     NSMutableArray *dataArray1; 
+     NSMutableArray *dataArray1;
+     NSMutableArray *websiteArray;
 }
 @property (strong, nonatomic) IBOutlet UITableView *DataTable;
 
