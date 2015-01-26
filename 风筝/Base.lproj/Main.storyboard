@@ -300,7 +300,7 @@
                         <viewControllerLayoutGuide type="top" id="6AQ-QR-TJ4"/>
                         <viewControllerLayoutGuide type="bottom" id="aim-FQ-02c"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="v1a-3J-aWS">
+                    <view key="view" contentMode="scaleToFill" id="v1a-3J-aWS" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -353,6 +353,9 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="backgroundTap:" destination="0mF-35-PdV" eventType="touchDown" id="wRE-kj-qIZ"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="mls-3s-C6j"/>
                     <connections>
@@ -378,7 +381,7 @@
                         <viewControllerLayoutGuide type="top" id="MXz-hg-do1"/>
                         <viewControllerLayoutGuide type="bottom" id="7BG-Xd-u6o"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -411,19 +414,22 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234" borderStyle="roundedRect" placeholder="请输入您的密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ncf-G2-cl9">
+                                <rect key="frame" x="53" y="261" width="251" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="风筝在线－关注您安全" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ig7-0p-HZj">
                                 <rect key="frame" x="85" y="126" width="170" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234" borderStyle="roundedRect" placeholder="请输入您的密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ncf-G2-cl9">
-                                <rect key="frame" x="53" y="261" width="251" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="backgroundTap:" destination="BYZ-38-t0r" eventType="touchDown" id="ntq-6r-9qG"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="YmJ-xe-D8C"/>
                     <connections>
@@ -579,8 +585,8 @@
         <image name="pink.jpg" width="500" height="375"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xmP-CI-1a5"/>
+        <segue reference="d3K-pa-KeZ"/>
+        <segue reference="VLR-qv-MCB"/>
         <segue reference="zdK-tt-3lj"/>
-        <segue reference="Ehs-k2-wxA"/>
     </inferredMetricsTieBreakers>
 </document>
