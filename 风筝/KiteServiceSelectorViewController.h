@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DrawLineView.h"
+//#import "DrawLineView.h"
 @interface KiteServiceSelectorViewController : UIViewController
 {
     CGPoint startImgPoint;
@@ -15,8 +15,6 @@
     //IBOutlet UIImageView *imageView;
     bool draging;
     BOOL coverview_show_flag;
-//    CGPoint lineStartPoint;
-//    CGPoint lineEndPoint;
     
 }
 

@@ -11,12 +11,11 @@
 
 @interface PersonalSettingViewController : UIViewController<UIActionSheetDelegate, UIPickerViewDelegate, UITextFieldDelegate,UIPickerViewDataSource>{
     
-    NSArray *touchFreqArray;
+    
     
     KeychainItemWrapper *wrapper;
 }
 
-@property (strong, nonatomic) IBOutlet UIPickerView *touchFreqSelector;
 
 @property (strong, nonatomic) IBOutlet UITextField *urgent_name;
 @property (strong, nonatomic) IBOutlet UITextField *urgent_telno;

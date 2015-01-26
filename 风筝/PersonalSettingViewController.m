@@ -9,7 +9,6 @@
 #import "PersonalSettingViewController.h"
 
 @implementation PersonalSettingViewController
-@synthesize touchFreqSelector;
 @synthesize l_timeButton;
 -(void)viewDidLoad{
     [super viewDidLoad];
@@ -17,10 +16,7 @@
     [l_timeButton addTarget:self action:@selector(startTime)
            forControlEvents:UIControlEventTouchUpInside];
     //初始化选择框
-    touchFreqArray = [NSArray arrayWithObjects:@"15",@"30",@"45", nil];
-    touchFreqSelector.delegate = self;
-    touchFreqSelector.dataSource = self;
-    [touchFreqSelector selectedRowInComponent:0];
+   
     
     //添加navigation bar
     //创建一个导航栏
@@ -44,22 +40,12 @@
     [self.view insertSubview:drawBackImageOnBg atIndex:0];
 }
 
-//提供多少个选择框
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 1;
-}
 
--(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    return [touchFreqArray count];
-}
--(NSString*) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    return [touchFreqArray objectAtIndex:row];
-}
+
+
 
 -(IBAction)savePersonalSetting:(id)sender{
     
-    NSInteger row = [touchFreqSelector selectedRowInComponent:0];
-    NSString *selectedTouchFreq = [touchFreqArray objectAtIndex:row];
     NSString *urgent_name = self.urgent_name.text;
     NSString *urgent_telno = self.urgent_telno.text;
     NSString *randomCode = self.randomCode.text;
@@ -76,7 +62,6 @@
         [self performSegueWithIdentifier:@"kiteAllService" sender:self];
     }
     
-    NSLog(@"选中的频率为:%@",selectedTouchFreq);
 }
 
 -(IBAction)logoutKite:(id)sender{
@@ -194,4 +179,9 @@
         return NO;
     }
 }
+
+- (IBAction)backgroundTap:(id)sender{
+    [self.view endEditing:YES];
+}
+
 @end
