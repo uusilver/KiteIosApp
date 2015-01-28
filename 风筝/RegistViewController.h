@@ -14,7 +14,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *username;
 @property (strong, nonatomic) IBOutlet UITextField *password;
 @property (strong, nonatomic) IBOutlet UITextField *password1;
-@property (strong, nonatomic) IBOutlet UITextField *serviceCode;
 @property (strong, nonatomic) IBOutlet UITextField *randomCode;
 @property (strong, nonatomic) IBOutlet UIButton *l_timeButton;
 @end

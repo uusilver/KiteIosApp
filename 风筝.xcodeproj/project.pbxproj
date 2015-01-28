@@ -56,6 +56,7 @@
 		A87A26E71A5E7FF800512BB0 /* lowsky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A87A26E61A5E7FF800512BB0 /* lowsky.jpg */; };
 		A8811A3B1A6FC5B200C6F48B /* LogoutKiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8811A3A1A6FC5B200C6F48B /* LogoutKiteViewController.m */; };
 		A8811A3E1A6FD0C800C6F48B /* KiteCourseCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8811A3D1A6FD0C800C6F48B /* KiteCourseCenterViewController.m */; };
+		A8923CD11A790FCF003E9F14 /* RegistViewStep2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8923CD01A790FCF003E9F14 /* RegistViewStep2ViewController.m */; };
 		A893AB3F1A69F8AB00458924 /* HYCircleLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A893AB3E1A69F8AB00458924 /* HYCircleLoadingView.m */; };
 		A893AB411A69FFC900458924 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A893AB401A69FFC900458924 /* bg.jpg */; };
 		A893AB431A6A395C00458924 /* pink-blue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A893AB421A6A395C00458924 /* pink-blue.jpg */; };
@@ -140,6 +141,8 @@
 		A8811A3A1A6FC5B200C6F48B /* LogoutKiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoutKiteViewController.m; sourceTree = "<group>"; };
 		A8811A3C1A6FD0C800C6F48B /* KiteCourseCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiteCourseCenterViewController.h; sourceTree = "<group>"; };
 		A8811A3D1A6FD0C800C6F48B /* KiteCourseCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KiteCourseCenterViewController.m; sourceTree = "<group>"; };
+		A8923CCF1A790FCF003E9F14 /* RegistViewStep2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewStep2ViewController.h; sourceTree = "<group>"; };
+		A8923CD01A790FCF003E9F14 /* RegistViewStep2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewStep2ViewController.m; sourceTree = "<group>"; };
 		A893AB3D1A69F8A500458924 /* HYCircleLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYCircleLoadingView.h; sourceTree = "<group>"; };
 		A893AB3E1A69F8AB00458924 /* HYCircleLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYCircleLoadingView.m; sourceTree = "<group>"; };
 		A893AB401A69FFC900458924 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 			children = (
 				A812E9951A5EB25C009D2410 /* RegistViewController.h */,
 				A812E9961A5EB25C009D2410 /* RegistViewController.m */,
+				A8923CCF1A790FCF003E9F14 /* RegistViewStep2ViewController.h */,
+				A8923CD01A790FCF003E9F14 /* RegistViewStep2ViewController.m */,
 			);
 			name = RegisterController;
 			sourceTree = "<group>";
@@ -457,6 +462,7 @@
 				A824F7A51A70BCBA005598D9 /* MYIntroductionView.m in Sources */,
 				A85E5D481A5D6B7100411FD6 /* KiteServiceSelectorViewController.m in Sources */,
 				A893AB3F1A69F8AB00458924 /* HYCircleLoadingView.m in Sources */,
+				A8923CD11A790FCF003E9F14 /* RegistViewStep2ViewController.m in Sources */,
 				A812E9971A5EB25C009D2410 /* RegistViewController.m in Sources */,
 				A83B03EA1A6D44F600C17502 /* KiteTools.m in Sources */,
 				A8811A3B1A6FC5B200C6F48B /* LogoutKiteViewController.m in Sources */,

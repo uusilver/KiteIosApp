@@ -48,13 +48,13 @@
     [self performSegueWithIdentifier:@"loginPage" sender:self];
 }
 
--(IBAction)registAction:(id)sender{
+-(IBAction)gotoNextSetp:(id)sender{
     NSLog(@"用户注册");
     NSString *username = self.username.text;
     NSString *password = self.password.text;
     NSString *password1 = self.password1.text;
     NSString *randomCode = self.randomCode.text;
-    NSString *serviceCode = self.serviceCode.text;
+    
     
     if(username==nil||[username isEqualToString:@""]){
         [self showAlertMsgBox:@"用户名不能为空"];
@@ -66,15 +66,11 @@
         [self showAlertMsgBox:@"重复的密码不能为空"];
     }else if(![password isEqualToString:password1]){
         [self showAlertMsgBox:@"两次输入的密码不一致，请检查"];
-    }else if(serviceCode==nil||[serviceCode isEqualToString:@""]){
-        [self showAlertMsgBox:@"服务密码不能为空"];
-    }else if(![self validateServiceCode:serviceCode]){
-        [self showAlertMsgBox:@"服务密码格式不对，请输入4位纯数字"];
     }else if(randomCode==nil||[randomCode isEqualToString:@""]){
         [self showAlertMsgBox:@"随即码不能为空"];
     }else{
         //TODO 调用注册的restservice，成功跳转到个人设置页面
-        [self performSegueWithIdentifier:@"settingPage" sender:self];
+        [self performSegueWithIdentifier:@"step2" sender:self];
     }
     
     
@@ -94,7 +90,6 @@
         self.password.text=@"";
         self.password1.text=@"";
         self.randomCode.text=@"";
-        self.serviceCode.text=@"";
     }
     //index == 1, 代表用户选择no，没有任何操作
 }
@@ -188,15 +183,7 @@
     }
 }
 
--(BOOL)validateServiceCode:(NSString*) serviceCode{
-    NSString *reg = @"/^\d{4}$/";
-    NSPredicate *regextServiceCode = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", reg];
-    if([regextServiceCode evaluateWithObject:serviceCode]==YES){
-        return YES;
-    }else{
-        return NO;
-    }
-}
+
 
 - (IBAction)backgroundTap:(id)sender{
     [self.view endEditing:YES];

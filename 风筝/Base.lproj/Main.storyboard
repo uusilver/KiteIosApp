@@ -304,53 +304,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入您的手机号来注册" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hn5-zW-Rge">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入您的手机号来注册" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hn5-zW-Rge">
                                 <rect key="frame" x="57" y="118" width="241" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入好记难猜的密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JMy-Kc-k73">
-                                <rect key="frame" x="57" y="173" width="241" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入您的短信验证码（点击右下按钮获取验证码）" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdT-3y-RpX">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入您的短信验证码（点击右下按钮获取验证码）" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zdT-3y-RpX">
                                 <rect key="frame" x="57" y="345" width="241" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZn-TF-Uyy">
-                                <rect key="frame" x="65" y="505" width="225" height="30"/>
-                                <state key="normal" title="清空" backgroundImage="pink.jpg">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="resetFields:" destination="0mF-35-PdV" eventType="touchDown" id="p8Z-y0-QaI"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0a9-N5-3xH">
-                                <rect key="frame" x="65" y="443" width="225" height="30"/>
-                                <state key="normal" title="注册" backgroundImage="pink-blue.jpg"/>
-                                <connections>
-                                    <action selector="registAction:" destination="0mF-35-PdV" eventType="touchDown" id="SVL-lf-KqC"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mX-rt-haW">
                                 <rect key="frame" x="175" y="391" width="138" height="30"/>
                                 <state key="normal" title="获取验证码">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入4位数字作为服务密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hWK-BF-iVX">
-                                <rect key="frame" x="57" y="291" width="241" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="为了安全，请您再输一次密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5tI-eI-OUj">
-                                <rect key="frame" x="57" y="234" width="241" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="为了安全，请您再输一次密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5tI-eI-OUj">
+                                <rect key="frame" x="57" y="258" width="241" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入好记难猜的密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JMy-Kc-k73">
+                                <rect key="frame" x="57" y="193" width="241" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0a9-N5-3xH">
+                                <rect key="frame" x="57" y="483" width="225" height="30"/>
+                                <state key="normal" title="下一步" backgroundImage="pink-blue.jpg"/>
+                                <connections>
+                                    <action selector="gotoNextSetp:" destination="0mF-35-PdV" eventType="touchDown" id="aIa-tB-Obx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
@@ -363,15 +349,72 @@
                         <outlet property="password" destination="JMy-Kc-k73" id="sNq-CE-IUg"/>
                         <outlet property="password1" destination="5tI-eI-OUj" id="dj8-bT-7Ow"/>
                         <outlet property="randomCode" destination="zdT-3y-RpX" id="ui0-vj-BdX"/>
-                        <outlet property="serviceCode" destination="hWK-BF-iVX" id="Cea-GC-b73"/>
                         <outlet property="username" destination="hn5-zW-Rge" id="5yy-lJ-r4e"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="loginPage" id="VLR-qv-MCB"/>
-                        <segue destination="WAt-mQ-whp" kind="presentation" identifier="settingPage" id="zdK-tt-3lj"/>
+                        <segue destination="8vW-Id-btP" kind="modal" identifier="step2" id="9uH-cU-LKX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biW-4f-nKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3606" y="-2566"/>
+        </scene>
+        <!--Regist View Step2 View Controller-->
+        <scene sceneID="KHb-yd-iBo">
+            <objects>
+                <viewController id="8vW-Id-btP" customClass="RegistViewStep2ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3zu-dq-iu8"/>
+                        <viewControllerLayoutGuide type="bottom" id="O4A-B1-Zrl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u8i-IA-XtP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入4位数字作为服务密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hWK-BF-iVX">
+                                <rect key="frame" x="87" y="88" width="241" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GwL-xg-nfN">
+                                <rect key="frame" x="195" y="425" width="60" height="30"/>
+                                <state key="normal" title="完成注册">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="finishRegist:" destination="8vW-Id-btP" eventType="touchDown" id="Srn-Sp-ZfT"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="安全答案" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Jwq-Pu-JCz">
+                                <rect key="frame" x="91" y="373" width="237" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="khz-64-MOH">
+                                <rect key="frame" x="-115" y="131" width="600" height="162"/>
+                                <connections>
+                                    <outlet property="delegate" destination="u8i-IA-XtP" id="UkF-dB-oB4"/>
+                                </connections>
+                            </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="安全问题" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wtS-Gn-7Pu">
+                                <rect key="frame" x="91" y="306" width="232" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="registQuestionSelector" destination="khz-64-MOH" id="ea3-oy-5EQ"/>
+                        <outlet property="safeAnswer" destination="Jwq-Pu-JCz" id="0y7-Ok-zn8"/>
+                        <outlet property="safeQuestion" destination="wtS-Gn-7Pu" id="yT9-yJ-gbb"/>
+                        <outlet property="serviceCode" destination="hWK-BF-iVX" id="nsw-3f-3KF"/>
+                        <segue destination="0mF-35-PdV" kind="modal" identifier="back2Step1" id="H3k-x3-9tz"/>
+                        <segue destination="WAt-mQ-whp" kind="modal" identifier="personalSetting" id="ASx-pd-7sS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jw6-Ft-Omc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2903" y="-2566"/>
         </scene>
         <!--Title-->
         <scene sceneID="tne-QT-ifu">
@@ -390,7 +433,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="13851483034" borderStyle="roundedRect" placeholder="输入您注册的手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VL4-YM-ctd">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="13851483034" borderStyle="roundedRect" placeholder="输入您注册的手机号" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VL4-YM-ctd">
                                 <rect key="frame" x="53" y="223" width="251" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
@@ -414,7 +457,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234" borderStyle="roundedRect" placeholder="请输入您的密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ncf-G2-cl9">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234" borderStyle="roundedRect" placeholder="请输入您的密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ncf-G2-cl9">
                                 <rect key="frame" x="53" y="261" width="251" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -585,8 +628,9 @@
         <image name="pink.jpg" width="500" height="375"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="d3K-pa-KeZ"/>
+        <segue reference="24f-7D-xVl"/>
         <segue reference="VLR-qv-MCB"/>
-        <segue reference="zdK-tt-3lj"/>
+        <segue reference="d3K-pa-KeZ"/>
+        <segue reference="ASx-pd-7sS"/>
     </inferredMetricsTieBreakers>
 </document>
