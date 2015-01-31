@@ -13,6 +13,10 @@
 		9AEF4C1B1A7110710041B359 /* icon-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEF4C151A7110710041B359 /* icon-2@2x.png */; };
 		9AEF4C1C1A7110710041B359 /* icon-1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEF4C161A7110710041B359 /* icon-1@3x.png */; };
 		9AEF4C1D1A7110710041B359 /* icon-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEF4C171A7110710041B359 /* icon-1@2x.png */; };
+		A80E7C111A7C6D98009705D0 /* ChangeSafeQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A80E7C101A7C6D98009705D0 /* ChangeSafeQuestionsViewController.m */; };
+		A80E7C141A7C7831009705D0 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A80E7C131A7C7831009705D0 /* ChangePasswordViewController.m */; };
+		A80E7C181A7CB2A1009705D0 /* ValidateUrgentInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A80E7C171A7CB2A1009705D0 /* ValidateUrgentInfoViewController.m */; };
+		A80E7C1B1A7CB4A0009705D0 /* RealChangePwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A80E7C1A1A7CB4A0009705D0 /* RealChangePwdViewController.m */; };
 		A812E9971A5EB25C009D2410 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A812E9961A5EB25C009D2410 /* RegistViewController.m */; };
 		A824F7A51A70BCBA005598D9 /* MYIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A824F7A11A70BCBA005598D9 /* MYIntroductionView.m */; };
 		A824F7A61A70BCBA005598D9 /* MYIntroductionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = A824F7A41A70BCBA005598D9 /* MYIntroductionPanel.m */; };
@@ -46,6 +50,7 @@
 		A85053F41A5993E900731462 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A85053F31A5993E900731462 /* Images.xcassets */; };
 		A85053F71A5993E900731462 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85053F51A5993E900731462 /* LaunchScreen.xib */; };
 		A85054031A5993E900731462 /* __Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A85054021A5993E900731462 /* __Tests.m */; };
+		A85A012B1A7A654F0012D92E /* ChangeServiceCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85A012A1A7A654F0012D92E /* ChangeServiceCodeViewController.m */; };
 		A85E5D451A5D6B4900411FD6 /* kite.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A85E5D441A5D6B4900411FD6 /* kite.jpg */; };
 		A85E5D481A5D6B7100411FD6 /* KiteServiceSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85E5D471A5D6B7100411FD6 /* KiteServiceSelectorViewController.m */; };
 		A85E5D4A1A5D81A300411FD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85E5D491A5D81A300411FD6 /* CoreGraphics.framework */; };
@@ -81,6 +86,14 @@
 		9AEF4C151A7110710041B359 /* icon-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-2@2x.png"; sourceTree = "<group>"; };
 		9AEF4C161A7110710041B359 /* icon-1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-1@3x.png"; sourceTree = "<group>"; };
 		9AEF4C171A7110710041B359 /* icon-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-1@2x.png"; sourceTree = "<group>"; };
+		A80E7C0F1A7C6D98009705D0 /* ChangeSafeQuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeSafeQuestionsViewController.h; sourceTree = "<group>"; };
+		A80E7C101A7C6D98009705D0 /* ChangeSafeQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeSafeQuestionsViewController.m; sourceTree = "<group>"; };
+		A80E7C121A7C7831009705D0 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
+		A80E7C131A7C7831009705D0 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
+		A80E7C161A7CB2A1009705D0 /* ValidateUrgentInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidateUrgentInfoViewController.h; sourceTree = "<group>"; };
+		A80E7C171A7CB2A1009705D0 /* ValidateUrgentInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidateUrgentInfoViewController.m; sourceTree = "<group>"; };
+		A80E7C191A7CB4A0009705D0 /* RealChangePwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealChangePwdViewController.h; sourceTree = "<group>"; };
+		A80E7C1A1A7CB4A0009705D0 /* RealChangePwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealChangePwdViewController.m; sourceTree = "<group>"; };
 		A812E9951A5EB25C009D2410 /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
 		A812E9961A5EB25C009D2410 /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
 		A824F7A11A70BCBA005598D9 /* MYIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYIntroductionView.m; sourceTree = "<group>"; };
@@ -127,6 +140,8 @@
 		A85053FC1A5993E900731462 /* 风筝Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "风筝Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85054011A5993E900731462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A85054021A5993E900731462 /* __Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __Tests.m; sourceTree = "<group>"; };
+		A85A01291A7A654F0012D92E /* ChangeServiceCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeServiceCodeViewController.h; sourceTree = "<group>"; };
+		A85A012A1A7A654F0012D92E /* ChangeServiceCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeServiceCodeViewController.m; sourceTree = "<group>"; };
 		A85E5D441A5D6B4900411FD6 /* kite.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kite.jpg; sourceTree = "<group>"; };
 		A85E5D461A5D6B7100411FD6 /* KiteServiceSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiteServiceSelectorViewController.h; sourceTree = "<group>"; };
 		A85E5D471A5D6B7100411FD6 /* KiteServiceSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KiteServiceSelectorViewController.m; sourceTree = "<group>"; };
@@ -172,6 +187,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A80E7C151A7CB285009705D0 /* ForgetPwd */ = {
+			isa = PBXGroup;
+			children = (
+				A80E7C161A7CB2A1009705D0 /* ValidateUrgentInfoViewController.h */,
+				A80E7C171A7CB2A1009705D0 /* ValidateUrgentInfoViewController.m */,
+				A80E7C191A7CB4A0009705D0 /* RealChangePwdViewController.h */,
+				A80E7C1A1A7CB4A0009705D0 /* RealChangePwdViewController.m */,
+			);
+			name = ForgetPwd;
+			sourceTree = "<group>";
+		};
 		A812E9941A5EB228009D2410 /* RegisterController */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +241,8 @@
 		A85053E51A5993E900731462 /* 风筝 */ = {
 			isa = PBXGroup;
 			children = (
+				A80E7C151A7CB285009705D0 /* ForgetPwd */,
+				A85A01281A7A65360012D92E /* ChangeInfo */,
 				A83B03E51A6D43BA00C17502 /* Main.storyboard */,
 				A8679C6D1A67D7550063020E /* lib */,
 				A84F7BF91A66A1280006E652 /* KeyChainItemWrapper */,
@@ -299,6 +327,19 @@
 				A85054011A5993E900731462 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A85A01281A7A65360012D92E /* ChangeInfo */ = {
+			isa = PBXGroup;
+			children = (
+				A85A01291A7A654F0012D92E /* ChangeServiceCodeViewController.h */,
+				A85A012A1A7A654F0012D92E /* ChangeServiceCodeViewController.m */,
+				A80E7C0F1A7C6D98009705D0 /* ChangeSafeQuestionsViewController.h */,
+				A80E7C101A7C6D98009705D0 /* ChangeSafeQuestionsViewController.m */,
+				A80E7C121A7C7831009705D0 /* ChangePasswordViewController.h */,
+				A80E7C131A7C7831009705D0 /* ChangePasswordViewController.m */,
+			);
+			name = ChangeInfo;
 			sourceTree = "<group>";
 		};
 		A8679C6D1A67D7550063020E /* lib */ = {
@@ -459,20 +500,25 @@
 			files = (
 				A8811A3E1A6FD0C800C6F48B /* KiteCourseCenterViewController.m in Sources */,
 				A878E6C21A611F02001F981B /* ShortKiteServiceViewController.m in Sources */,
+				A80E7C1B1A7CB4A0009705D0 /* RealChangePwdViewController.m in Sources */,
 				A824F7A51A70BCBA005598D9 /* MYIntroductionView.m in Sources */,
+				A80E7C181A7CB2A1009705D0 /* ValidateUrgentInfoViewController.m in Sources */,
 				A85E5D481A5D6B7100411FD6 /* KiteServiceSelectorViewController.m in Sources */,
 				A893AB3F1A69F8AB00458924 /* HYCircleLoadingView.m in Sources */,
 				A8923CD11A790FCF003E9F14 /* RegistViewStep2ViewController.m in Sources */,
 				A812E9971A5EB25C009D2410 /* RegistViewController.m in Sources */,
 				A83B03EA1A6D44F600C17502 /* KiteTools.m in Sources */,
 				A8811A3B1A6FC5B200C6F48B /* LogoutKiteViewController.m in Sources */,
+				A85A012B1A7A654F0012D92E /* ChangeServiceCodeViewController.m in Sources */,
 				A85053EF1A5993E900731462 /* ViewController.m in Sources */,
 				A842E4821A64C88200617A9E /* LongKiteServiceViewController.m in Sources */,
 				A8CCE35D1A5E309F00CAEA06 /* DrawLineView.m in Sources */,
+				A80E7C141A7C7831009705D0 /* ChangePasswordViewController.m in Sources */,
 				A824F7A61A70BCBA005598D9 /* MYIntroductionPanel.m in Sources */,
 				A85053EC1A5993E900731462 /* AppDelegate.m in Sources */,
 				A85053E91A5993E900731462 /* main.m in Sources */,
 				A84F7BFC1A66A1390006E652 /* KeychainItemWrapper.m in Sources */,
+				A80E7C111A7C6D98009705D0 /* ChangeSafeQuestionsViewController.m in Sources */,
 				A84422071A5ABF30008C7527 /* PersonalSettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

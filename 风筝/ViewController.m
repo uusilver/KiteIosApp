@@ -117,6 +117,10 @@
     }
 }
 
+-(IBAction)goForgetPws:(id)sender{
+    [self performSegueWithIdentifier:@"go2ForgetPwd" sender:self];
+}
+
 //跳转至注册页面
 -(void)gotoRegisterPage{
     NSLog(@"用户点击去注册页面");

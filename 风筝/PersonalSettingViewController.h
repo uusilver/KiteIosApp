@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "KeychainItemWrapper.h";
+#import "ChangeServiceCodeViewController.h"
+#import "ChangeSafeQuestionsViewController.h"
+#import "ChangePasswordViewController.h"
 
 @interface PersonalSettingViewController : UIViewController<UIActionSheetDelegate, UIPickerViewDelegate, UITextFieldDelegate,UIPickerViewDataSource>{
     

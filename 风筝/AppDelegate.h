@@ -12,7 +12,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) UINavigationController *navController;
+@property (strong, nonatomic) UINavigationController *navigationViewController;
 
 //全局变量的设置
 @property NSString* username;

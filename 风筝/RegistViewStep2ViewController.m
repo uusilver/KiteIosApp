@@ -12,6 +12,7 @@
 @synthesize registQuestionSelector;
 @synthesize safeQuestion;
 @synthesize safeAnswer;
+@synthesize userRealName;
 -(void)viewDidLoad{
     [super viewDidLoad];
     
@@ -58,11 +59,14 @@
     NSString *serviceCode = self.serviceCode.text;
     NSString *safeQuestion = self.safeQuestion.text;
     NSString *safeAnswer = self.safeAnswer.text;
+    NSString *userRealName = self.userRealName.text;
     
    if(serviceCode==nil||[serviceCode isEqualToString:@""]){
         [self showAlertMsgBox:@"服务密码不能为空"];
     }else if(![self validateServiceCode:serviceCode]){
         [self showAlertMsgBox:@"服务密码格式不对，请输入纯数字"];
+    }else if([serviceCode length]>5){
+        [self showAlertMsgBox:@"服务密码长度过长，请输入小于等于5位"];
     }else if(safeQuestion==nil||[safeQuestion isEqualToString:@""]){
         [self showAlertMsgBox:@"安全问题不能为空"];
     }else if(safeAnswer==nil||[safeAnswer isEqualToString:@""]){
@@ -107,5 +111,9 @@
     }else{
         return NO;
     }
+}
+
+- (IBAction)backgroundTap:(id)sender{
+    [self.view endEditing:YES];
 }
 @end

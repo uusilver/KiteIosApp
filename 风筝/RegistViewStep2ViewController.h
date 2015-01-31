@@ -13,6 +13,7 @@
     NSMutableArray *registQuestionArray;
 }
 
+@property (strong, nonatomic) IBOutlet UITextField *userRealName;
 @property (strong, nonatomic) IBOutlet UITextField *serviceCode;
 @property (strong, nonatomic) IBOutlet UITextField *safeQuestion;
 @property (strong, nonatomic) IBOutlet UITextField *safeAnswer;
