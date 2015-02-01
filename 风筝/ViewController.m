@@ -109,6 +109,24 @@
 }
 //TODO 调用登陆的web service
 -(BOOL)callLoginRestService:(NSString*) usernameCode password:(NSString*) passwordCode{
+    //测试json数据读取，用国家天气预报接口，后续等待替换
+    NSError *error;
+    NSString *urlStr = @"http://www.weather.com.cn/data/cityinfo/101190101.html";
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
+    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSDictionary *weatherDic = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&error];
+    NSDictionary *weatherInfo = [weatherDic objectForKey:@"weatherinfo"];
+    NSLog(@"%@",weatherDic);
+    NSLog(@"城市为:%@, 天气:%@, 最高温度:%@, 最低温度:%@, 时间:%@",
+          [weatherInfo objectForKey:@"city"],
+          [weatherInfo  objectForKey:@"weather"],
+          [weatherInfo objectForKey:@"temp1"],
+          [weatherInfo objectForKey:@"temp2"],
+          [weatherInfo objectForKey:@"ptime"]);
+    NSLog(@"天气读取完毕");
+    
+    
+    /***************************/
     if(passwordCode!=nil && [passwordCode compare:@"1234"]==NSOrderedSame
        && usernameCode!=nil && [usernameCode compare:@"13851483034"]==NSOrderedSame){
         return YES;
