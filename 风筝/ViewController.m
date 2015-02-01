@@ -59,12 +59,12 @@
     password.secureTextEntry = YES;
     //初始化默认记住用户
     rememberFlag.on = YES;
-    NSString* username = @"";
-    NSString* password = @"";
+    NSString* _username = @"";
+    NSString* _password = @"";
     //TODO放开测试..
 //    username = [wrapper objectForKey:(__bridge id)kSecAttrAccount];
 //    password = [wrapper objectForKey:(__bridge id)kSecValueData];
-    if((username==nil||[username isEqualToString:@""])&&(password==nil||[password isEqualToString:@""])){
+    if((_username==nil||[_username isEqualToString:@""])&&(_password==nil||[_password isEqualToString:@""])){
         NSLog(@"用户名密码为空，正常登录");
     }else{
         NSLog(@"有保存的用户名和密码，直接登录");
@@ -111,8 +111,10 @@
 -(BOOL)callLoginRestService:(NSString*) usernameCode password:(NSString*) passwordCode{
     //测试json数据读取，用国家天气预报接口，后续等待替换
     NSError *error;
-    NSString *urlStr = @"http://www.weather.com.cn/data/cityinfo/101190101.html";
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
+    NSMutableString *mStr = [NSMutableString stringWithCapacity:50];
+    [mStr appendString:@"http://www.weather.com.cn/data/cityinfo/"];
+    [mStr appendString:@"101190101.html"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:(NSString *)mStr ]];
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     NSDictionary *weatherDic = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&error];
     NSDictionary *weatherInfo = [weatherDic objectForKey:@"weatherinfo"];

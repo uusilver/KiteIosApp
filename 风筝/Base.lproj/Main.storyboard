@@ -351,7 +351,7 @@
                     </view>
                     <connections>
                         <outlet property="touchFreqSelector" destination="X3e-4u-9ZG" id="W6M-EK-Tqp"/>
-                        <segue destination="9it-cX-ohI" kind="modal" identifier="longBack2ServicePool" id="Cit-fn-Ghc"/>
+                        <segue destination="9it-cX-ohI" kind="presentation" identifier="longBack2ServicePool" id="Cit-fn-Ghc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9DV-6H-K7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -875,7 +875,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="nzF-aG-RzC"/>
         <segue reference="bHj-LY-Kjd"/>
-        <segue reference="d3K-pa-KeZ"/>
+        <segue reference="Cit-fn-Ghc"/>
         <segue reference="24f-7D-xVl"/>
     </inferredMetricsTieBreakers>
 </document>
