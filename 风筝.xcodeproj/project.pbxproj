@@ -59,6 +59,7 @@
 		A878E6C41A6229BC001F981B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A878E6C31A6229BC001F981B /* CoreLocation.framework */; };
 		A87A26E51A5E7FEF00512BB0 /* highsky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A87A26E41A5E7FEF00512BB0 /* highsky.jpg */; };
 		A87A26E71A5E7FF800512BB0 /* lowsky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A87A26E61A5E7FF800512BB0 /* lowsky.jpg */; };
+		A87C987C1A7E5652004AC0FF /* Base64Handler.m in Sources */ = {isa = PBXBuildFile; fileRef = A87C987B1A7E5652004AC0FF /* Base64Handler.m */; };
 		A8811A3B1A6FC5B200C6F48B /* LogoutKiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8811A3A1A6FC5B200C6F48B /* LogoutKiteViewController.m */; };
 		A8811A3E1A6FD0C800C6F48B /* KiteCourseCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8811A3D1A6FD0C800C6F48B /* KiteCourseCenterViewController.m */; };
 		A88885961A7DFCAF001C775C /* switch-on.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A88885921A7DFCAF001C775C /* switch-on.jpeg */; };
@@ -156,6 +157,8 @@
 		A878E6C31A6229BC001F981B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A87A26E41A5E7FEF00512BB0 /* highsky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = highsky.jpg; sourceTree = "<group>"; };
 		A87A26E61A5E7FF800512BB0 /* lowsky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lowsky.jpg; sourceTree = "<group>"; };
+		A87C987A1A7E5652004AC0FF /* Base64Handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Handler.h; sourceTree = "<group>"; };
+		A87C987B1A7E5652004AC0FF /* Base64Handler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64Handler.m; sourceTree = "<group>"; };
 		A8811A391A6FC5B200C6F48B /* LogoutKiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoutKiteViewController.h; sourceTree = "<group>"; };
 		A8811A3A1A6FC5B200C6F48B /* LogoutKiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoutKiteViewController.m; sourceTree = "<group>"; };
 		A8811A3C1A6FD0C800C6F48B /* KiteCourseCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiteCourseCenterViewController.h; sourceTree = "<group>"; };
@@ -363,6 +366,8 @@
 				A824F7A41A70BCBA005598D9 /* MYIntroductionPanel.m */,
 				A893AB3E1A69F8AB00458924 /* HYCircleLoadingView.m */,
 				A893AB3D1A69F8A500458924 /* HYCircleLoadingView.h */,
+				A87C987A1A7E5652004AC0FF /* Base64Handler.h */,
+				A87C987B1A7E5652004AC0FF /* Base64Handler.m */,
 			);
 			name = lib;
 			sourceTree = "<group>";
@@ -530,6 +535,7 @@
 				A842E4821A64C88200617A9E /* LongKiteServiceViewController.m in Sources */,
 				A8CCE35D1A5E309F00CAEA06 /* DrawLineView.m in Sources */,
 				A80E7C141A7C7831009705D0 /* ChangePasswordViewController.m in Sources */,
+				A87C987C1A7E5652004AC0FF /* Base64Handler.m in Sources */,
 				A824F7A61A70BCBA005598D9 /* MYIntroductionPanel.m in Sources */,
 				A85053EC1A5993E900731462 /* AppDelegate.m in Sources */,
 				A85053E91A5993E900731462 /* main.m in Sources */,

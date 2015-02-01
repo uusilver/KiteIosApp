@@ -15,6 +15,8 @@
 #import "HYCircleLoadingView.h"
 #import "MYIntroductionView.h"
 
+#import "Base64Handler.h"
+
 @interface ViewController : UIViewController <MYIntroductionDelegate>{
     KeychainItemWrapper *wrapper;
     

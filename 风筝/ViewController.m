@@ -127,6 +127,11 @@
           [weatherInfo objectForKey:@"ptime"]);
     NSLog(@"天气读取完毕");
     
+    //加密测试
+    NSString *str = [NSString stringWithFormat:@"YWE="];
+    NSString *str1 = [NSString stringWithFormat:@"aa"];
+    NSLog(@"解密后的字符串========%@",[Base64Handler textFromBase64String:str]);
+    NSLog(@"加密后的字符串=========%@",[Base64Handler base64StringFromText:str1]);
     
     /***************************/
     if(passwordCode!=nil && [passwordCode compare:@"1234"]==NSOrderedSame
