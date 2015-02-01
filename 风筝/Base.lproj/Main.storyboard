@@ -376,9 +376,9 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmG-Lv-7K3">
-                                <rect key="frame" x="115" y="240" width="90" height="30"/>
-                                <state key="normal" title="按下服务开启">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmG-Lv-7K3">
+                                <rect key="frame" x="99" y="250" width="208" height="100"/>
+                                <state key="normal" image="touch-hold-up.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -871,11 +871,12 @@
         <image name="lowsky.jpg" width="331" height="220"/>
         <image name="pink-blue.jpg" width="430" height="354"/>
         <image name="pink.jpg" width="500" height="375"/>
+        <image name="touch-hold-up.png" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nzF-aG-RzC"/>
         <segue reference="bHj-LY-Kjd"/>
-        <segue reference="Cit-fn-Ghc"/>
+        <segue reference="d3K-pa-KeZ"/>
         <segue reference="24f-7D-xVl"/>
     </inferredMetricsTieBreakers>
 </document>

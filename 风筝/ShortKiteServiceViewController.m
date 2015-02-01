@@ -93,14 +93,14 @@
     
     if ([gestureRecognizer state] == UIGestureRecognizerStateBegan) {
         //长按事件开始
-        NSLog(@"长按事件开始");
+        [serviceBtn setImage:[UIImage imageNamed:@"touch-hold-down.png"] forState:UIControlStateNormal];        NSLog(@"长按事件开始");
         //调用定时任务来开启短线风筝的具体服务
         //当前默认5秒
         timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(shortKiteTimerTask4GPSandDirection) userInfo:nil repeats:YES];
     }
     
     else if ([gestureRecognizer state] == UIGestureRecognizerStateEnded) {
-        
+        [serviceBtn setImage:[UIImage imageNamed:@"touch-hold-up.png"] forState:UIControlStateNormal];
         //长按事件结束后需要用户输入服务密码来关闭服务
         [self showCloseServiceAlert:@"请输入服务密码"];
         //TODO同时纪录用户已经松开了按钮，如果在规定时间内未能输入正确的服务密码，则后台服务需要通知紧急联系人

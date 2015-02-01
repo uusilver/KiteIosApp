@@ -61,6 +61,10 @@
 		A87A26E71A5E7FF800512BB0 /* lowsky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A87A26E61A5E7FF800512BB0 /* lowsky.jpg */; };
 		A8811A3B1A6FC5B200C6F48B /* LogoutKiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8811A3A1A6FC5B200C6F48B /* LogoutKiteViewController.m */; };
 		A8811A3E1A6FD0C800C6F48B /* KiteCourseCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8811A3D1A6FD0C800C6F48B /* KiteCourseCenterViewController.m */; };
+		A88885961A7DFCAF001C775C /* switch-on.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A88885921A7DFCAF001C775C /* switch-on.jpeg */; };
+		A88885971A7DFCAF001C775C /* switch-off.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A88885931A7DFCAF001C775C /* switch-off.jpeg */; };
+		A88885981A7DFCAF001C775C /* touch-hold-down.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A88885941A7DFCAF001C775C /* touch-hold-down.jpeg */; };
+		A88885991A7DFCAF001C775C /* touch-hold-up.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A88885951A7DFCAF001C775C /* touch-hold-up.jpeg */; };
 		A8923CD11A790FCF003E9F14 /* RegistViewStep2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8923CD01A790FCF003E9F14 /* RegistViewStep2ViewController.m */; };
 		A893AB3F1A69F8AB00458924 /* HYCircleLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A893AB3E1A69F8AB00458924 /* HYCircleLoadingView.m */; };
 		A893AB411A69FFC900458924 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A893AB401A69FFC900458924 /* bg.jpg */; };
@@ -156,6 +160,10 @@
 		A8811A3A1A6FC5B200C6F48B /* LogoutKiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoutKiteViewController.m; sourceTree = "<group>"; };
 		A8811A3C1A6FD0C800C6F48B /* KiteCourseCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KiteCourseCenterViewController.h; sourceTree = "<group>"; };
 		A8811A3D1A6FD0C800C6F48B /* KiteCourseCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KiteCourseCenterViewController.m; sourceTree = "<group>"; };
+		A88885921A7DFCAF001C775C /* switch-on.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "switch-on.jpeg"; sourceTree = "<group>"; };
+		A88885931A7DFCAF001C775C /* switch-off.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "switch-off.jpeg"; sourceTree = "<group>"; };
+		A88885941A7DFCAF001C775C /* touch-hold-down.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "touch-hold-down.jpeg"; sourceTree = "<group>"; };
+		A88885951A7DFCAF001C775C /* touch-hold-up.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "touch-hold-up.jpeg"; sourceTree = "<group>"; };
 		A8923CCF1A790FCF003E9F14 /* RegistViewStep2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewStep2ViewController.h; sourceTree = "<group>"; };
 		A8923CD01A790FCF003E9F14 /* RegistViewStep2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewStep2ViewController.m; sourceTree = "<group>"; };
 		A893AB3D1A69F8A500458924 /* HYCircleLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYCircleLoadingView.h; sourceTree = "<group>"; };
@@ -274,6 +282,10 @@
 		A85053E61A5993E900731462 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A88885921A7DFCAF001C775C /* switch-on.jpeg */,
+				A88885931A7DFCAF001C775C /* switch-off.jpeg */,
+				A88885941A7DFCAF001C775C /* touch-hold-down.jpeg */,
+				A88885951A7DFCAF001C775C /* touch-hold-up.jpeg */,
 				A824F7A71A70BDFC005598D9 /* background_gray@2x.png */,
 				A824F7A81A70BDFC005598D9 /* bg_default@3x.png */,
 				A824F7A91A70BDFC005598D9 /* background_gray@3x.png */,
@@ -461,15 +473,19 @@
 				A824F7CC1A70BDFC005598D9 /* kite@2x.png in Resources */,
 				A85053F71A5993E900731462 /* LaunchScreen.xib in Resources */,
 				A824F7C71A70BDFC005598D9 /* cb_glossy_on@2x.png in Resources */,
+				A88885991A7DFCAF001C775C /* touch-hold-up.jpeg in Resources */,
 				A824F7BA1A70BDFC005598D9 /* background_gray@2x.png in Resources */,
 				A87A26E71A5E7FF800512BB0 /* lowsky.jpg in Resources */,
 				A824F7BB1A70BDFC005598D9 /* bg_default@3x.png in Resources */,
+				A88885961A7DFCAF001C775C /* switch-on.jpeg in Resources */,
+				A88885971A7DFCAF001C775C /* switch-off.jpeg in Resources */,
 				A824F7BE1A70BDFC005598D9 /* background_gray@1x.png in Resources */,
 				A824F7C81A70BDFC005598D9 /* cb_glossy_off.png in Resources */,
 				9AEF4C1A1A7110710041B359 /* icon-2@3x.png in Resources */,
 				A824F7C21A70BDFC005598D9 /* Fzxia.png in Resources */,
 				A824F7BF1A70BDFC005598D9 /* bg_default@2x.png in Resources */,
 				A8679C721A67F93B0063020E /* blue_sky.jpg in Resources */,
+				A88885981A7DFCAF001C775C /* touch-hold-down.jpeg in Resources */,
 				A824F7C01A70BDFC005598D9 /* bg_default@1x.jpg in Resources */,
 				A824F7BC1A70BDFC005598D9 /* background_gray@3x.png in Resources */,
 				A824F7C11A70BDFC005598D9 /* bg_default_empty@2x.png in Resources */,

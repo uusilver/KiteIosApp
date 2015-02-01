@@ -67,12 +67,12 @@
     }
     
     //根据用户的长线风筝服务状态来初始化用户的按钮图标
-    CGRect frame = CGRectMake(90, 200, 200, 60);
-    serviceButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    serviceButton.backgroundColor = [UIColor clearColor];
+    CGRect frame = CGRectMake(90, 250, 200, 60);
+    serviceButton = [UIButton buttonWithType:UIButtonTypeCustom];
     //TODO 根据ws来获得当前用户服务状态，从而初始化用户的按钮图标
     if(YES){
-        [serviceButton setTitle:@"开启服务" forState:UIControlStateNormal];
+//        [serviceButton setTitle:@"开启服务" forState:UIControlStateNormal];
+        [serviceButton setImage:[UIImage imageNamed:@"switch-off.jpeg"] forState:UIControlStateNormal];
         serviceFlag = YES;
         //设置相关全局变量
         
@@ -92,11 +92,15 @@
 -(void)serviceButtonClick{
     if(serviceFlag){
         [self startLongKiteService];
-        [serviceButton setTitle:@"关闭服务" forState:UIControlStateNormal];
+//        [serviceButton setTitle:@"关闭服务" forState:UIControlStateNormal];
+        [serviceButton setImage:[UIImage imageNamed:@"switch-on.jpeg"] forState:UIControlStateNormal];
+
         serviceFlag = NO;
         
     }else{
-        [serviceButton setTitle:@"开启服务" forState:UIControlStateNormal];
+//        [serviceButton setTitle:@"开启服务" forState:UIControlStateNormal];
+        [serviceButton setImage:[UIImage imageNamed:@"switch-off.jpeg"] forState:UIControlStateNormal];
+
         //需要用户输入密码来关闭服务
         [self showCloseServiceAlert:@"请输入服务密码"];
         
