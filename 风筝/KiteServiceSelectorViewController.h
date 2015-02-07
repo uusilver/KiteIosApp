@@ -14,11 +14,9 @@
     CGPoint startTouchPoint;
     //IBOutlet UIImageView *imageView;
     bool draging;
-    BOOL coverview_show_flag;
     
 }
 
 @property(nonatomic, assign) NSInteger serviceType;
-@property (nonatomic) BOOL coverview_show_flag;
 
 @end

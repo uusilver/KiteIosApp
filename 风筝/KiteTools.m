@@ -9,4 +9,9 @@
 #import "KiteTools.h"
 
 @implementation KiteTools
+
+- (BOOL)validateMobile:(NSString *)mobileNum{
+    return YES;
+}
+
 @end

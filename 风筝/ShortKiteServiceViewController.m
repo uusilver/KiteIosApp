@@ -223,7 +223,7 @@
      */
 }
 
-
+//For Cindy
 //定制弹出框,用户输入服务密码来关闭服务
 -(void)showCloseServiceAlert:(NSString*) title{
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title message:@"" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];

@@ -10,7 +10,4 @@
 
 @interface ChangePasswordViewController : UIViewController
 
-@property (strong, nonatomic)  UITextField *password;
-@property (strong, nonatomic)  UITextField *nPassword;
-@property (strong, nonatomic)  UITextField *nPassword1;
 @end

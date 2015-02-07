@@ -10,7 +10,6 @@
 
 @interface ChangeServiceCodeViewController : UIViewController
 
-@property (strong, nonatomic)  UITextField *serviceCode;
-@property (strong, nonatomic)  UITextField *password;
+@property (strong, nonatomic) IBOutlet UITextField *serviceCode;
 
 @end

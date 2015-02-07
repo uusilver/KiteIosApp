@@ -13,7 +13,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     //创建一个导航栏
-    UINavigationBar *navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 58)];
+    UINavigationBar *navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
     //创建一个导航栏集合
     UINavigationItem *navItem = [[UINavigationItem alloc] initWithTitle:nil];
     //设置导航栏的内容
@@ -21,16 +21,9 @@
     //把导航栏集合添加到导航栏中，设置动画关闭
     [navBar pushNavigationItem:navItem animated:NO];
     [self.view addSubview:navBar];
-    //添加背景图片
-    UIImage *backImage = [UIImage imageNamed:@"bg.jpg"];
-    UIImageView *drawBackImageOnBg = [[UIImageView alloc]initWithImage:backImage];
-    drawBackImageOnBg.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    [self.view insertSubview:drawBackImageOnBg atIndex:0];
     
     [DataTable setDelegate:self];
-    
     [DataTable setDataSource:self];
-    
     [self.view addSubview:DataTable];
     
     //TODO 调用新闻列表web service来读取相关

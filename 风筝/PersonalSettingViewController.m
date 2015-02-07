@@ -2,192 +2,182 @@
 //  PersonalSettingViewController.m
 //  风筝
 //
-//  Created by 李俊英 on 15/1/5.
+//  Created by Mac on 15/2/4.
 //  Copyright (c) 2015年 VaniLi. All rights reserved.
 //
 
 #import "PersonalSettingViewController.h"
+#import "ChangeSafeQuestionsViewController.h"
+
+@interface PersonalSettingViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UITableView *listTable;
+@property (weak, nonatomic) IBOutlet UILabel *mobileNo;
+@property (weak, nonatomic) IBOutlet UILabel *remainSMS;
+@property (weak, nonatomic) IBOutlet UILabel *urgent_name;
+@property (weak, nonatomic) IBOutlet UIButton *changeSafeBtn;
+@property (weak, nonatomic) IBOutlet UILabel *urgent_telno;
+
+@end
 
 @implementation PersonalSettingViewController
-@synthesize l_timeButton;
--(void)viewDidLoad{
+
+NSString *logoutTitle = @"退出风筝";
+NSString *logoutMessage = @"确认退出风筝";
+NSString *ValidatePasswordTitle = @"验证登录密码";
+NSString *ValidatePasswordMessage = @"为保障你的数据安全，修改前请填写您的登录密码。";
+
+//static int changUrgentContactIndex = 1;
+static int changeSafeQuestionIndex = 2;
+static int changeLoginPasswordIndex = 3;
+static int changeServiceCodeIndex = 4;
+//static NSString *changUrgentContactSegue = @"goChangUrgentContact";
+static NSString *changeSafeQuestionSegue = @"goChangSafeQuestion";
+static NSString *changeLoginPasswordSegue = @"goChangLoginPassword";
+static NSString *changeServiceCodeSegue = @"goChangServiceCode";
+
+
+- (void)viewDidLoad {
     [super viewDidLoad];
-    //验证码按钮初始化
-    [l_timeButton addTarget:self action:@selector(startTime)
-           forControlEvents:UIControlEventTouchUpInside];
     
-
-    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
-    temporaryBarButtonItem.title =@"返回";
-    self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
+    // Do any additional setup after loading the view.
+    //初始化个人信息
+    //self.mobileNo.text = @"手机号码：";
+    //self.remainSMS.text = @"剩余短信：";
+    //self.urgent_name.text = @"紧急联系人：";
+    //self.urgent_telno.text = @"紧急联系人电话：";
     
-    self.navigationItem.title = @"个人设置";
+    //头像以圆形展示
+    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
+    self.profileImageView.clipsToBounds = YES;
+    self.profileImageView.layer.borderWidth = 3.0f;
+    self.profileImageView.layer.borderColor = [UIColor whiteColor].CGColor;
     
-    UIImage *backImage = [UIImage imageNamed:@"bg.jpg"];
-    UIImageView *drawBackImageOnBg = [[UIImageView alloc]initWithImage:backImage];
-    drawBackImageOnBg.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    [self.view insertSubview:drawBackImageOnBg atIndex:0];
+    [self.listTable setDelegate:self];
+    [self.listTable setDataSource:self];
 }
 
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 
-
--(IBAction)savePersonalSetting:(id)sender{
-    
-    NSString *urgent_name = self.urgent_name.text;
-    NSString *urgent_telno = self.urgent_telno.text;
-    NSString *randomCode = self.randomCode.text;
-    if(urgent_name==nil||[urgent_name isEqualToString:@""]){
-        [self showAlertMsgBox:@"紧急联系姓名不能为空"];
-    }else if(urgent_telno==nil||[urgent_telno isEqualToString:@""]){
-        [self showAlertMsgBox:@"紧急联系电话不能为空"];
-    }else if([self validateMobile:urgent_telno]){
-        [self showAlertMsgBox:@"请输入正确的紧急联系人电话号码"];
-    }else if(randomCode==nil||[randomCode isEqualToString:@""]){
-        [self showAlertMsgBox:@"验证码不能为空"];
-    }else{
-        //跳转到服务列表页面
-        [self performSegueWithIdentifier:@"kiteAllService" sender:self];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = nil;
+    if([indexPath row] == 0){
+        cell = [tableView dequeueReusableCellWithIdentifier:@"urgentContact"];
+    }else if([indexPath row] == 1){
+        cell = [tableView dequeueReusableCellWithIdentifier:@"safeQuestion"];
+    }else if([indexPath row] == 2){
+        cell = [tableView dequeueReusableCellWithIdentifier:@"password"];
+    }else if([indexPath row] == 3){
+        cell = [tableView dequeueReusableCellWithIdentifier:@"serviceCode"];
+    }else if([indexPath row] == 4){
+        cell = [tableView dequeueReusableCellWithIdentifier:@"quitBtn"];
     }
-    
+    return cell;
 }
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 5;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
 
 -(IBAction)logoutKite:(id)sender{
     NSLog(@"退出风筝");
-    UIAlertView* alert=[[UIAlertView alloc]initWithTitle:@"退出风筝"message:@"确认退出风筝" delegate:self cancelButtonTitle:@"取消"otherButtonTitles:@"确认",nil];
+    UIAlertView* alert=[[UIAlertView alloc]initWithTitle:logoutTitle message:logoutMessage delegate:self cancelButtonTitle:@"取消"otherButtonTitles:@"确认",nil];
     [alert show];
-
 }
+//[self showValidateLoginPasswordAlert:@""];
+
+-(IBAction)changeSafeQuestion:(id)sender{
+    [self validateLoginPassword:ValidatePasswordTitle toChangeType:changeSafeQuestionIndex];
+}
+
+-(IBAction)changeServiceCode:(id)sender{
+    [self validateLoginPassword:ValidatePasswordTitle toChangeType:changeServiceCodeIndex];
+}
+
+-(IBAction)changeLoginPassword:(id)sender{
+    [self validateLoginPassword:ValidatePasswordTitle toChangeType:changeLoginPasswordIndex];
+}
+
+//定制弹出框
+//用户在修改登录密码／服务密码／安全问题前，需要验证登录密码
+-(void)validateLoginPassword:(NSString *)title toChangeType:(int)changeType{
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title message:ValidatePasswordMessage delegate:self cancelButtonTitle:@"确认" otherButtonTitles:@"取消", nil];
+    alert.alertViewStyle = UIAlertViewStyleSecureTextInput;
+    [[alert textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeNumberPad];
+    [[alert textFieldAtIndex:0] becomeFirstResponder];
+    [alert show];
+    changeTypeIndex = changeType;
+    NSLog(@"changeTypeIndex:%d", changeTypeIndex);
+}
+
 
 //确认关闭选择
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if(buttonIndex == 1){
-        NSLog(@"执行具体的登出代码");
-        //用户选择Yes
-        //TODO 调用登出的webservice
-        
-        //清空用户的Wrapper设置
-        [wrapper resetKeychainItem];
-        
-        [self performSegueWithIdentifier:@"back2login" sender:self];
-        
-//        [self.navigationController popToRootViewControllerAnimated:YES];
+    //显示登出确认框
+    if([alertView.title isEqualToString:logoutTitle]){
+        if(buttonIndex == 1){
+            NSLog(@"执行具体的登出代码");
+            //用户选择Yes
+            //TODO 调用登出的webservice
+            
+            //清空用户的Wrapper设置
+            [wrapper resetKeychainItem];
+            
+            [self performSegueWithIdentifier:@"back2login" sender:self];
+        }
+        //index == 1, 代表用户选择no，没有任何操作
     }
-    //index == 1, 代表用户选择no，没有任何操作
-}
-
-
-
-//验证码按钮倒计时
--(void)startTime{
-    __block int timeout=59; //倒计时时间
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
-    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
-    dispatch_source_set_event_handler(_timer, ^{
-        if(timeout<=0){ //倒计时结束，关闭
-            dispatch_source_cancel(_timer);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                //设置界面的按钮显示 根据自己需求设置
-                [l_timeButton setTitle:@"发送验证码" forState:UIControlStateNormal];
-                l_timeButton.userInteractionEnabled = YES;
-            });
-        }else{
-            //            int minutes = timeout / 60;
-            int seconds = timeout % 60;
-            NSString *strTime = [NSString stringWithFormat:@"%.2d", seconds];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                //设置界面的按钮显示 根据自己需求设置
-                NSLog(@"____%@",strTime);
-                [l_timeButton setTitle:[NSString stringWithFormat:@"%@秒后重新发送",strTime] forState:UIControlStateNormal];
-                l_timeButton.userInteractionEnabled = NO;
-                
-            });
-            timeout--;
+    
+    //显示登录密码校验框
+    if([alertView.title isEqualToString:ValidatePasswordTitle]){
+        if(buttonIndex == 0){
+            //用户选择确认
+            NSString *serviceCode = [alertView textFieldAtIndex:0].text;
+            if([serviceCode compare:@"1234"]==NSOrderedSame){
+                NSLog(@"密码正确");
+                //跳转去指定页面
+                if(changeTypeIndex == changeSafeQuestionIndex){
+                    [self performSegueWithIdentifier:@"showChangeSafeQuestion" sender:self];
+                }else if(changeTypeIndex == changeLoginPasswordIndex){
+                    [self performSegueWithIdentifier:@"showChangeLoginPassword" sender:self];
+                }else if(changeTypeIndex == changeServiceCodeIndex){
+                    [self performSegueWithIdentifier:@"showChangeServiceCode" sender:self];
+                }
+            }else{
+                NSLog(@"密码错误");
+                [self validateLoginPassword:@"密码错误,请重新输入密码" toChangeType:changeTypeIndex];
+            }
+            //TODO关闭服务的真正逻辑
             
         }
-    });
-    dispatch_resume(_timer);
-    
-}
-
--(IBAction)goChangeServiceCode:sender{
-    ChangeServiceCodeViewController *cView = [[ChangeServiceCodeViewController alloc]init];
-    [self.navigationController pushViewController:cView animated:YES];
-}
-
--(IBAction)goChangeSafeQuestions:(id)sender{
-    ChangeSafeQuestionsViewController *qView = [[ChangeSafeQuestionsViewController alloc]init];
-    [self.navigationController pushViewController:qView animated:YES];
-
-}
-
--(IBAction)goChangePassword:(id)sender{
-    ChangePasswordViewController *pView = [[ChangePasswordViewController alloc]init];
-    [self.navigationController pushViewController:pView animated:YES];
-}
-
-//统一显示错误信息的提示框
--(void)showAlertMsgBox:(NSString*) msg{
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"登陆信息" message:msg delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
-    [alertView show];
-}
-
-//验证手机号
-- (BOOL)validateMobile:(NSString *)mobileNum
-{
-    /**
-     * 手机号码
-     * 移动：134[0-8],135,136,137,138,139,150,151,157,158,159,182,187,188
-     * 联通：130,131,132,152,155,156,185,186
-     * 电信：133,1349,153,180,189
-     */
-    NSString * MOBILE = @"^1(3[0-9]|5[0-35-9]|8[025-9])\\d{8}$";
-    /**
-     10         * 中国移动：China Mobile
-     11         * 134[0-8],135,136,137,138,139,150,151,157,158,159,182,187,188
-     12         */
-    NSString * CM = @"^1(34[0-8]|(3[5-9]|5[017-9]|8[278])\\d)\\d{7}$";
-    /**
-     15         * 中国联通：China Unicom
-     16         * 130,131,132,152,155,156,185,186
-     17         */
-    NSString * CU = @"^1(3[0-2]|5[256]|8[56])\\d{8}$";
-    /**
-     20         * 中国电信：China Telecom
-     21         * 133,1349,153,180,189
-     22         */
-    NSString * CT = @"^1((33|53|8[09])[0-9]|349)\\d{7}$";
-    /**
-     25         * 大陆地区固话及小灵通
-     26         * 区号：010,020,021,022,023,024,025,027,028,029
-     27         * 号码：七位或八位
-     28         */
-    // NSString * PHS = @"^0(10|2[0-5789]|\\d{3})\\d{7,8}$";
-    
-    NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", MOBILE];
-    NSPredicate *regextestcm = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CM];
-    NSPredicate *regextestcu = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CU];
-    NSPredicate *regextestct = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CT];
-    
-    if (([regextestmobile evaluateWithObject:mobileNum] == YES)
-        || ([regextestcm evaluateWithObject:mobileNum] == YES)
-        || ([regextestct evaluateWithObject:mobileNum] == YES)
-        || ([regextestcu evaluateWithObject:mobileNum] == YES))
-    {
-        return YES;
+        //index == 1, 代表用户选择no，没有任何操作
     }
-    else
-    {
-        return NO;
-    }
-}
-
-
-- (IBAction)backgroundTap:(id)sender{
-    [self.view endEditing:YES];
 }
 
 @end

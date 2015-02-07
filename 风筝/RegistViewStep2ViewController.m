@@ -57,9 +57,9 @@
 
 -(IBAction)finishRegist:sender{
     NSString *serviceCode = self.serviceCode.text;
-    NSString *safeQuestion = self.safeQuestion.text;
-    NSString *safeAnswer = self.safeAnswer.text;
-    NSString *userRealName = self.userRealName.text;
+    NSString *safeQuestionText = self.safeQuestion.text;
+    NSString *safeAnswerText = self.safeAnswer.text;
+    //NSString *userRealName = self.userRealName.text;
     
    if(serviceCode==nil||[serviceCode isEqualToString:@""]){
         [self showAlertMsgBox:@"服务密码不能为空"];
@@ -67,9 +67,9 @@
         [self showAlertMsgBox:@"服务密码格式不对，请输入纯数字"];
     }else if([serviceCode length]>5){
         [self showAlertMsgBox:@"服务密码长度过长，请输入小于等于5位"];
-    }else if(safeQuestion==nil||[safeQuestion isEqualToString:@""]){
+    }else if(safeQuestionText==nil||[safeQuestionText isEqualToString:@""]){
         [self showAlertMsgBox:@"安全问题不能为空"];
-    }else if(safeAnswer==nil||[safeAnswer isEqualToString:@""]){
+    }else if(safeAnswerText==nil||[safeAnswerText isEqualToString:@""]){
         [self showAlertMsgBox:@"安全答案不能为空"];
     }else{
         [self performSegueWithIdentifier:@"personalSetting" sender:self];

@@ -14,10 +14,8 @@
 }
 
 
-@property (strong, nonatomic)  UITextField *password;
-@property (strong, nonatomic)  UITextField *safeQuestion;
-@property (strong, nonatomic)  UITextField *safeAnswer;
+@property (strong, nonatomic)  IBOutlet UITextField *safeQuestion;
+@property (strong, nonatomic)  IBOutlet UITextField *safeAnswer;
 @property (strong, nonatomic) IBOutlet UIPickerView *registQuestionSelector;
-
 
 @end

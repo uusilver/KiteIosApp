@@ -23,20 +23,41 @@
 
 @implementation KiteServiceSelectorViewController
 @synthesize serviceType;
-//是否显示遮盖层介绍信息
-@synthesize coverview_show_flag;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //TODO 判断用户的服务状态，如果开启长线风筝服务则跳转到相关页面
+    
+    //创建一个导航栏
+    UINavigationBar *navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
+    //创建一个导航栏集合
+    UINavigationItem *navItem = [[UINavigationItem alloc] initWithTitle:nil];
+    //设置导航栏的内容
+    [navItem setTitle:@"服务选择"];
+    //把导航栏集合添加到导航栏中
+    [navBar pushNavigationItem:navItem animated:NO];
+    [self.view addSubview:navBar];
+
+    //TODO
     //添加遮盖层点击事件
     UITapGestureRecognizer *coverViewTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toMainViewAction:)];
     [self.coverView addGestureRecognizer:coverViewTapped];
     
-    //初始化不再显示checkbox
-    coverview_show_flag = YES;
-    [self.noshowCheckboxBtn setImage:[UIImage imageNamed:@"cb_glossy_off"] forState:YES];
+    //判断用户的服务状态，如果开启长线风筝服务则跳转到相关页面
     
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    //若遮盖层已经显示过，则取消显示
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *showCoverView = [defaults objectForKey:@"showCoverView"];
+    
+    if(showCoverView==nil || [showCoverView isEqualToString:@"YES"]){
+        //设置不再显示遮盖层
+        [[NSUserDefaults standardUserDefaults] setObject:@"NO" forKey:@"showCoverView"];
+        [self showCoverView];
+    }else{
+        [self hideCoverView];
+    }
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -132,34 +153,38 @@
 - (IBAction)toMainViewAction:(id)sender {
     self.mainView.hidden = NO;
     self.coverView.hidden = YES;
-    [self.showCheckboxBtn setImage:[UIImage imageNamed:@"cb_glossy_off"] forState:NO];
-    coverview_show_flag = NO;
+    [self drawline];
 }
 
-//checkbox点击事件
+//主页面checkbox点击事件
 - (IBAction)noshowCheckboxBtnAction:(id)sender {
-    if(coverview_show_flag == YES){
-        [self.noshowCheckboxBtn setImage:[UIImage imageNamed:@"cb_glossy_on"] forState:NO];
-    }else{
-        [self.noshowCheckboxBtn setImage:[UIImage imageNamed:@"cb_glossy_off"] forState:NO];
-    }
-    coverview_show_flag = !coverview_show_flag;
+    [self hideCoverView];
 }
 
 //checkbox点击事件
 - (IBAction)showCheckboxBtnAction:(id)sender {
-    if(coverview_show_flag == YES){
-        [self.showCheckboxBtn setImage:[UIImage imageNamed:@"cb_glossy_off"] forState:NO];
-    }else{
-        [self.showCheckboxBtn setImage:[UIImage imageNamed:@"cb_glossy_on"] forState:NO];
-        self.mainView.hidden = YES;
-        self.coverView.hidden = NO;
-    }
-    coverview_show_flag = !coverview_show_flag;
+    [self showCoverView];
+}
+
+//显示遮盖层，并隐藏画线
+- (void)showCoverView{
+    self.coverView.hidden = NO;
+    self.mainView.hidden = YES;
+    //隐藏画线页面
+    self.imgLines.hidden = YES;
+}
+
+//显示主页面，并画线
+- (void)hideCoverView{
+    self.coverView.hidden = YES;
+    self.mainView.hidden = NO;
+    //画线
+    [self drawline];
 }
 
 //画线
 - (void)drawline{
+    
     [self.imgLines removeFromSuperview];
     
     self.imgLines =[[UIImageView alloc] initWithFrame:self.view.frame];
