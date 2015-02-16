@@ -126,7 +126,7 @@ static NSString *changeServiceCodeSegue = @"goChangServiceCode";
 //定制弹出框
 //用户在修改登录密码／服务密码／安全问题前，需要验证登录密码
 -(void)validateLoginPassword:(NSString *)title toChangeType:(int)changeType{
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title message:ValidatePasswordMessage delegate:self cancelButtonTitle:@"确认" otherButtonTitles:@"取消", nil];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title message:ValidatePasswordMessage delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
     alert.alertViewStyle = UIAlertViewStyleSecureTextInput;
     [[alert textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeNumberPad];
     [[alert textFieldAtIndex:0] becomeFirstResponder];
@@ -156,7 +156,7 @@ static NSString *changeServiceCodeSegue = @"goChangServiceCode";
     
     //显示登录密码校验框
     if([alertView.title isEqualToString:ValidatePasswordTitle]){
-        if(buttonIndex == 0){
+        if(buttonIndex == 1){
             //用户选择确认
             NSString *serviceCode = [alertView textFieldAtIndex:0].text;
             if([serviceCode compare:@"1234"]==NSOrderedSame){
@@ -176,7 +176,7 @@ static NSString *changeServiceCodeSegue = @"goChangServiceCode";
             //TODO关闭服务的真正逻辑
             
         }
-        //index == 1, 代表用户选择no，没有任何操作
+        //index == 0, 代表用户选择no，没有任何操作
     }
 }
 

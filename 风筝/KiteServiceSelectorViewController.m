@@ -211,7 +211,7 @@
     //终坐标为风筝图片的左下角
     CGFloat linEndX = self.imageView.frame.origin.x;
     CGFloat lineEndY = self.imageView.frame.origin.y + self.imageView.frame.size.height;
-    CGContextAddLineToPoint(contex, linEndX, lineEndY);
+    CGContextAddCurveToPoint(contex, linEndX, lineEndY, 150, 300, linEndX, lineEndY);
     
     CGContextStrokePath(contex);
     self.imgLines.image = UIGraphicsGetImageFromCurrentImageContext();

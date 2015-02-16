@@ -171,7 +171,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *showIntroViews = [defaults objectForKey:@"showIntroViews"];
     
-    NSLog(@"showIntroViewsFlag:%@", showIntroViews);
+    NSLog(@"是否展示介绍页面:%@", showIntroViews);
     
     if(showIntroViews==nil || [showIntroViews isEqualToString:@"YES"]){
         //set the flag and not show intro views next time
