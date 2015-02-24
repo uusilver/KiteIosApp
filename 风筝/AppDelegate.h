@@ -15,8 +15,11 @@
 @property (strong, nonatomic) UINavigationController *navigationViewController;
 
 //全局变量的设置
-@property NSString* username;
+@property NSString *username;
 @property BOOL isLogin;
+@property NSString *urgent_telno;
+@property NSString *urgent_name;
+@property NSString *touch_freq;
 
 
 @end

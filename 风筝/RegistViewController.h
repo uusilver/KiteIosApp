@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 
-@interface RegistViewController : UIViewController
+@interface RegistViewController : UIViewController{
+    AppDelegate *delegate;
+}
+
 
 @property (strong, nonatomic) IBOutlet UITextField *username;
 @property (strong, nonatomic) IBOutlet UITextField *password;

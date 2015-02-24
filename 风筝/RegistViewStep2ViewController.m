@@ -15,6 +15,8 @@
 @synthesize userRealName;
 -(void)viewDidLoad{
     [super viewDidLoad];
+    //初始化全局变量
+    delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     
     //初始化选择框
     registQuestionArray = [[NSMutableArray alloc]init];
@@ -72,6 +74,20 @@
     }else if(safeAnswerText==nil||[safeAnswerText isEqualToString:@""]){
         [self showAlertMsgBox:@"安全答案不能为空"];
     }else{
+        //TODO call 注册步骤2
+        NSMutableString *mStr = [NSMutableString stringWithCapacity:50];
+        [mStr appendString:@"/rest/registRest/servicePwdAndSecurityQASetting/"];
+        [mStr appendString:delegate.username];
+        [mStr appendString:@"/"];
+        [mStr appendString:serviceCode];
+        [mStr appendString:@"/"];
+        [mStr appendString:safeQuestionText];
+        [mStr appendString:@"/"];
+        [mStr appendString:safeAnswerText];
+        [mStr appendString:@"/"];
+        [mStr appendString:@"clientType"];
+        NSLog(@"注册步骤2rest地址:%@",(NSString *)mStr);
+        
         [self performSegueWithIdentifier:@"personalSetting" sender:self];
     }
     

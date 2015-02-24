@@ -63,6 +63,7 @@
 		A893AB431A6A395C00458924 /* pink-blue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A893AB421A6A395C00458924 /* pink-blue.jpg */; };
 		A893AB451A6A39F800458924 /* pink.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A893AB441A6A39F800458924 /* pink.jpg */; };
 		A8CCE35D1A5E309F00CAEA06 /* DrawLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CCE35C1A5E309F00CAEA06 /* DrawLineView.m */; };
+		A8CE4C621A9B18F2002963EB /* person.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8CE4C611A9B18F2002963EB /* person.plist */; };
 		A8DB35151A848DD5006B6054 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = A8DB35141A848DD5006B6054 /* profile.png */; };
 /* End PBXBuildFile section */
 
@@ -160,6 +161,7 @@
 		A893AB441A6A39F800458924 /* pink.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pink.jpg; sourceTree = "<group>"; };
 		A8CCE35B1A5E309F00CAEA06 /* DrawLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineView.h; sourceTree = "<group>"; };
 		A8CCE35C1A5E309F00CAEA06 /* DrawLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineView.m; sourceTree = "<group>"; };
+		A8CE4C611A9B18F2002963EB /* person.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = person.plist; sourceTree = "<group>"; };
 		A8DB35141A848DD5006B6054 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -314,6 +316,7 @@
 				A85E5D441A5D6B4900411FD6 /* kite.jpg */,
 				A85053E71A5993E900731462 /* Info.plist */,
 				A85053E81A5993E900731462 /* main.m */,
+				A8CE4C611A9B18F2002963EB /* person.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				A893AB431A6A395C00458924 /* pink-blue.jpg in Resources */,
 				9AEF4C1C1A7110710041B359 /* icon-1@3x.png in Resources */,
 				9AEF4C191A7110710041B359 /* icon@2x.png in Resources */,
+				A8CE4C621A9B18F2002963EB /* person.plist in Resources */,
 				A824F7CC1A70BDFC005598D9 /* kite@2x.png in Resources */,
 				9A4DB5A31A84A15E009C64EC /* touch-hold-down.png in Resources */,
 				A85053F71A5993E900731462 /* LaunchScreen.xib in Resources */,

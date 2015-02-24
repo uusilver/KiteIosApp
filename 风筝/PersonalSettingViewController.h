@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "KeychainItemWrapper.h"
+#import "AppDelegate.h"
 
 @interface PersonalSettingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
     KeychainItemWrapper *wrapper;

@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 @interface ChangeSafeQuestionsViewController : UIViewController<UIPickerViewDelegate, UITextFieldDelegate,UIPickerViewDataSource>{
     
     NSMutableArray *registQuestionArray;
+    
+    AppDelegate *delegate;
 }
 
 

@@ -60,17 +60,28 @@
     
     password.secureTextEntry = YES;
     //初始化默认记住用户
-    rememberFlag.on = YES;
-    NSString* _username = @"";
-    NSString* _password = @"";
-    //TODO放开测试..
-//    username = [wrapper objectForKey:(__bridge id)kSecAttrAccount];
-//    password = [wrapper objectForKey:(__bridge id)kSecValueData];
-    if((_username==nil||[_username isEqualToString:@""])&&(_password==nil||[_password isEqualToString:@""])){
-        NSLog(@"用户名密码为空，正常登录");
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"person" ofType:@"plist"];
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+    NSString *rFlag = [data objectForKey:@"RememberMe"];
+    
+    if([rFlag compare:@"YES"] == NSOrderedSame){
+        NSLog(@"记住我开启，直接登录");
+        [rememberFlag setOn:YES];
+        NSString* _username = @"";
+        NSString* _password = @"";
+        //TODO放开测试..
+        //    username = [wrapper objectForKey:(__bridge id)kSecAttrAccount];
+        //    password = [wrapper objectForKey:(__bridge id)kSecValueData];
+        if((_username==nil||[_username isEqualToString:@""])&&(_password==nil||[_password isEqualToString:@""])){
+            NSLog(@"用户名密码为空，正常登录");
+        }else{
+            NSLog(@"有保存的用户名和密码，直接登录");
+        }
     }else{
-        NSLog(@"有保存的用户名和密码，直接登录");
+        NSLog(@"记住我关闭");
+        [rememberFlag setOn:NO];
     }
+
 }
 
 -(IBAction)loginCheck:(id)sender{
@@ -90,12 +101,28 @@
             //设置相关全局变量
             AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
             delegate.isLogin = YES;
+            delegate.username = usernameCode;
             
             if(rememberFlag.on){
+                //更新plist文件
+                
                 //TODO 等待测试
                 //            [wrapper setObject:usernameCode forKey:(__bridge id)(kSecAttrAccount)];
                 //            [wrapper setObject:passwordCode forKey:(__bridge id)(kSecValueData)];
+                NSString *path = [[NSBundle mainBundle] pathForResource:@"person" ofType:@"plist"];
+                NSMutableDictionary *applist = [[[NSMutableDictionary alloc]initWithContentsOfFile:path]mutableCopy];
+                NSString *name = [applist objectForKey:@"RememberMe"];
+                name = @"YES";
+                [applist setObject:name forKey:@"RememberMe"];
+                [applist writeToFile:path atomically:YES];
                 
+            }else{
+                NSString *path = [[NSBundle mainBundle] pathForResource:@"person" ofType:@"plist"];
+                NSMutableDictionary *applist = [[[NSMutableDictionary alloc]initWithContentsOfFile:path]mutableCopy];
+                NSString *name = [applist objectForKey:@"RememberMe"];
+                name = @"NO";
+                [applist setObject:name forKey:@"RememberMe"];
+                [applist writeToFile:path atomically:YES];
             }
             //跳转进入服务列表页面
             [self performSegueWithIdentifier:@"KiteServiceList" sender:self];
@@ -114,20 +141,27 @@
     //测试json数据读取，用国家天气预报接口，后续等待替换
     NSError *error;
     NSMutableString *mStr = [NSMutableString stringWithCapacity:50];
-    [mStr appendString:@"http://www.weather.com.cn/data/cityinfo/"];
-    [mStr appendString:@"101190101.html"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:(NSString *)mStr ]];
-    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    NSDictionary *weatherDic = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&error];
-    NSDictionary *weatherInfo = [weatherDic objectForKey:@"weatherinfo"];
-    NSLog(@"%@",weatherDic);
-    NSLog(@"城市为:%@, 天气:%@, 最高温度:%@, 最低温度:%@, 时间:%@",
-          [weatherInfo objectForKey:@"city"],
-          [weatherInfo  objectForKey:@"weather"],
-          [weatherInfo objectForKey:@"temp1"],
-          [weatherInfo objectForKey:@"temp2"],
-          [weatherInfo objectForKey:@"ptime"]);
-    NSLog(@"天气读取完毕");
+    [mStr appendString:@"/rest/login/"];
+    [mStr appendString:usernameCode];
+    [mStr appendString:@"/"];
+    [mStr appendString:passwordCode];
+    [mStr appendString:@"/"];
+    [mStr appendString:@"clientType"];
+    NSLog(@"登陆rest地址:%@",(NSString *)mStr);
+//    [mStr appendString:@"http://www.weather.com.cn/data/cityinfo/"];
+//    [mStr appendString:@"101190101.html"];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:(NSString *)mStr ]];
+//    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+//    NSDictionary *weatherDic = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&error];
+//    NSDictionary *weatherInfo = [weatherDic objectForKey:@"weatherinfo"];
+//    NSLog(@"%@",weatherDic);
+//    NSLog(@"城市为:%@, 天气:%@, 最高温度:%@, 最低温度:%@, 时间:%@",
+//          [weatherInfo objectForKey:@"city"],
+//          [weatherInfo  objectForKey:@"weather"],
+//          [weatherInfo objectForKey:@"temp1"],
+//          [weatherInfo objectForKey:@"temp2"],
+//          [weatherInfo objectForKey:@"ptime"]);
+//    NSLog(@"天气读取完毕");
     
     //加密测试
     NSString *str = [NSString stringWithFormat:@"YWE="];

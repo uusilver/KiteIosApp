@@ -40,13 +40,7 @@ static NSString *changeServiceCodeSegue = @"goChangServiceCode";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Do any additional setup after loading the view.
-    //初始化个人信息
-    //self.mobileNo.text = @"手机号码：";
-    //self.remainSMS.text = @"剩余短信：";
-    //self.urgent_name.text = @"紧急联系人：";
-    //self.urgent_telno.text = @"紧急联系人电话：";
+   
     
     //头像以圆形展示
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
@@ -145,7 +139,15 @@ static NSString *changeServiceCodeSegue = @"goChangServiceCode";
             NSLog(@"执行具体的登出代码");
             //用户选择Yes
             //TODO 调用登出的webservice
+            //初始化全局变量
+            AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
             
+            NSMutableString *mStr = [NSMutableString stringWithCapacity:50];
+            [mStr appendString:@"/rest/logout/"];
+            [mStr appendString:delegate.username];
+            [mStr appendString:@"/"];
+            [mStr appendString:@"clientType"];
+            NSLog(@"登出rest地址:%@",(NSString *)mStr);
             //清空用户的Wrapper设置
             [wrapper resetKeychainItem];
             

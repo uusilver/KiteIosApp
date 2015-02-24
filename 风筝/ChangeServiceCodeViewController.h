@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
-@interface ChangeServiceCodeViewController : UIViewController
+@interface ChangeServiceCodeViewController : UIViewController{
+    AppDelegate *delegate;
+}
 
 @property (strong, nonatomic) IBOutlet UITextField *serviceCode;
 

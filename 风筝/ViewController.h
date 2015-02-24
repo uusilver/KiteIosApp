@@ -9,9 +9,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Security/Security.h>
+#import "AppDelegate.h"
 #import "KeychainItemWrapper.h"
 #import "PersonalSettingViewController.h"
-#import "AppDelegate.h"
 #import "HYCircleLoadingView.h"
 #import "MYIntroductionView.h"
 
@@ -19,6 +19,7 @@
 
 @interface ViewController : UIViewController <MYIntroductionDelegate>{
     KeychainItemWrapper *wrapper;
+   
     
 }
 @property (strong, nonatomic) IBOutlet UITextField *username;

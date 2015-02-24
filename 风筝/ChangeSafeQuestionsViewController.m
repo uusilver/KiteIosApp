@@ -15,7 +15,8 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    
+    //初始化全局变量
+    delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     //添加背景图片
     UIImage *backImage = [UIImage imageNamed:@"bg.jpg"];
     UIImageView *drawBackImageOnBg = [[UIImageView alloc]initWithImage:backImage];
@@ -47,7 +48,17 @@
     }else if(safeAnswerText==nil||[safeAnswerText isEqualToString:@""]){
         [self showAlertMsgBox:@"安全问题答案不能为空"];
     }else{
-        NSLog(@"完成修改");
+        NSMutableString *mStr = [NSMutableString stringWithCapacity:50];
+        [mStr appendString:@"/rest/userProfile/saveSecurityInfo/"];
+        [mStr appendString:delegate.username];
+        [mStr appendString:@"/"];
+        [mStr appendString:safeQuestionText];
+        [mStr appendString:@"/"];
+        [mStr appendString:safeAnswerText];
+        [mStr appendString:@"/"];
+        [mStr appendString:@"clientType"];
+        NSLog(@"修改安全问题，答案rest地址:%@",(NSString *)mStr);
+        NSLog(@"完成安全问题修改");
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

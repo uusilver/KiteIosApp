@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 @interface RegistViewStep2ViewController : UIViewController<UIPickerViewDelegate, UITextFieldDelegate,UIPickerViewDataSource>{
     
     NSMutableArray *registQuestionArray;
+    
+    AppDelegate *delegate;
 }
 
 @property (strong, nonatomic) IBOutlet UITextField *userRealName;

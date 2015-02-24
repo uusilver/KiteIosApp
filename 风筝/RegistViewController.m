@@ -12,6 +12,9 @@
 @synthesize l_timeButton;
 -(void)viewDidLoad{
     [super viewDidLoad];
+    //初始化全局变量
+    delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    
     //验证码按钮初始化
     [l_timeButton addTarget:self action:@selector(startTime)
            forControlEvents:UIControlEventTouchUpInside];
@@ -70,6 +73,17 @@
         [self showAlertMsgBox:@"随即码不能为空"];
     }else{
         //TODO 调用注册的restservice，成功跳转到个人设置页面
+        NSMutableString *mStr = [NSMutableString stringWithCapacity:50];
+        [mStr appendString:@"/rest/registRest/regist/"];
+        [mStr appendString:username];
+        [mStr appendString:@"/"];
+        [mStr appendString:username];
+        [mStr appendString:@"/"];
+        [mStr appendString:password];
+        [mStr appendString:@"/"];
+        [mStr appendString:@"clientType"];
+        NSLog(@"注册步骤1rest地址:%@",(NSString *)mStr);
+        delegate.username = username;
         [self performSegueWithIdentifier:@"step2" sender:self];
     }
     

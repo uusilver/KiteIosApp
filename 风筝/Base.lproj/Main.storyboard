@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tes-N7-nsW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -618,7 +618,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="13851483034" borderStyle="bezel" placeholder="输入您注册的手机号" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VL4-YM-ctd">
-                                <rect key="frame" x="0.0" y="223" width="600" height="30"/>
+                                <rect key="frame" x="0.0" y="223" width="380" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
@@ -641,7 +641,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234" borderStyle="bezel" placeholder="请输入您的密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ncf-G2-cl9">
-                                <rect key="frame" x="0.0" y="261" width="600" height="30"/>
+                                <rect key="frame" x="0.0" y="261" width="380" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1195,8 +1195,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="d3K-pa-KeZ"/>
-        <segue reference="2ph-4i-j1m"/>
-        <segue reference="nGh-vb-elT"/>
-        <segue reference="eUY-MI-yLg"/>
+        <segue reference="IZj-4J-1kN"/>
+        <segue reference="nzF-aG-RzC"/>
+        <segue reference="24f-7D-xVl"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,6 +14,8 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
+    //初始化全局变量
+    delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     //添加背景图片
     UIImage *backImage = [UIImage imageNamed:@"bg.jpg"];
     UIImageView *drawBackImageOnBg = [[UIImageView alloc]initWithImage:backImage];
@@ -32,7 +34,15 @@
     }else if([serviceCodeText length]>5){
         [self showAlertMsgBox:@"服务密码长度过长，请输入小于等于5位"];
     }else{
-        NSLog(@"完成修改");
+        NSMutableString *mStr = [NSMutableString stringWithCapacity:50];
+        [mStr appendString:@"/rest/userProfile/saveServicePassword"];
+        [mStr appendString:delegate.username];
+        [mStr appendString:@"/"];
+        [mStr appendString:serviceCodeText];
+        [mStr appendString:@"/"];
+        [mStr appendString:@"clientType"];
+        NSLog(@"修改服务密码rest地址:%@",(NSString *)mStr);
+        NSLog(@"完成服务密码修改");
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
