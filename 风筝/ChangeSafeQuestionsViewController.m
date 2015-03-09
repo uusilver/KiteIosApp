@@ -31,6 +31,7 @@
     registQuestionSelector.delegate = self;
     registQuestionSelector.dataSource = self;
     [registQuestionSelector selectedRowInComponent:0];
+    //registQuestionSelector.font = [UIFont systemFontOfSize:10];//设置选择框的字体大小跟页面一致
     safeQuestion.text = registQuestionArray[0];
     
 }
@@ -76,9 +77,19 @@
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    NSString *questionInSelector =registQuestionArray[row];
+    NSString *questionInSelector =  registQuestionArray[row];
     safeQuestion.text = questionInSelector;
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row
+          forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    UILabel *mycom = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 250.0f, 30.0f)];
     
+    NSString *imgstr = [registQuestionArray objectAtIndex:row];
+    mycom.text = imgstr;
+    mycom.font = [UIFont systemFontOfSize: 18];
+    return mycom;
 }
 
 //统一显示错误信息的提示框

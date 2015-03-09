@@ -26,6 +26,7 @@
 NSString *logoutTitle = @"退出风筝";
 NSString *logoutMessage = @"确认退出风筝";
 NSString *ValidatePasswordTitle = @"验证登录密码";
+NSString *WrongPasswordTitle = @"密码错误,请重新输入密码";
 NSString *ValidatePasswordMessage = @"为保障你的数据安全，修改前请填写您的登录密码。";
 
 //static int changUrgentContactIndex = 1;
@@ -157,7 +158,7 @@ static NSString *changeServiceCodeSegue = @"goChangServiceCode";
     }
     
     //显示登录密码校验框
-    if([alertView.title isEqualToString:ValidatePasswordTitle]){
+    if([alertView.title isEqualToString:ValidatePasswordTitle] || [alertView.title isEqualToString:WrongPasswordTitle ]){
         if(buttonIndex == 1){
             //用户选择确认
             NSString *serviceCode = [alertView textFieldAtIndex:0].text;
@@ -173,7 +174,7 @@ static NSString *changeServiceCodeSegue = @"goChangServiceCode";
                 }
             }else{
                 NSLog(@"密码错误");
-                [self validateLoginPassword:@"密码错误,请重新输入密码" toChangeType:changeTypeIndex];
+                [self validateLoginPassword:WrongPasswordTitle toChangeType:changeTypeIndex];
             }
             //TODO关闭服务的真正逻辑
             
